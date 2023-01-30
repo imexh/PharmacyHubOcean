@@ -1,0 +1,250 @@
+<html>
+<head>
+  <title>Dashboard</title>
+</head>
+
+<link rel="stylesheet" href="/style/dashboard.css" />
+<body>
+<img
+        src="/images/dashboard/PharmacyBG1.png"
+        class="background"
+        alt="Body Background Image"
+/>
+
+<div class="navBarContainer">
+  <div class="wrap">
+    <div class="search">
+      <input
+              type="text"
+              class="searchTerm"
+              placeholder="Search for anything here..."
+      />
+    </div>
+  </div>
+  <!-- setting the clicable dropdown -->
+  <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">
+      <!-- <button onclick="myFunction()" id="userIcon"> -->
+      <!-- <img src="../images/profilePic.svg" id="userIcon" /> -->
+      <img src="/images/dashboard/profilePic.svg" class="dropbtn" />
+    </button>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="">My Profile</a>
+      <a href="/logout">Logout</a>
+      <!-- <a href="">Contact</a> -->
+    </div>
+  </div>
+
+  <script>
+        /* When the user clicks on the button,
+      toggle between hiding and showing the dropdown content */
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+          if (!event.target.matches(".dropbtn")) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains("show")) {
+                openDropdown.classList.remove("show");
+              }
+            }
+          }
+        };
+      </script>
+
+  <!-- testing for notification -->
+  <!-- testing for notification -->
+  <div class="dropdownNotify">
+    <button onclick="myFunctionNotify()" class="dropbtnNotify">
+      <!-- <button onclick="myFunction()" id="userIcon"> -->
+      <!-- <img src="../images/profilePic.svg" id="userIcon" /> -->
+      <img
+              src="/images/dashboard/notificationIcon.svg"
+              class="dropbtnNotify"
+      />
+    </button>
+    <div id="myDropdownNotify" class="dropdownNotify-content">
+      <a href="">Message received from Customer 01.</a>
+      <a href="">Customer 03 placed an order</a>
+      <a href="">Admin : New features added. Click here to check.</a>
+    </div>
+  </div>
+
+  <!-- end -->
+  <script>
+        /* When the user clicks on the button,
+  toggle between hiding and showing the dropdown content */
+        function myFunctionNotify() {
+          document.getElementById("myDropdownNotify").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+          if (!event.target.matches(".dropbtnNotify")) {
+            var dropdowns = document.getElementsByClassName(
+              "dropdownNotify-content"
+            );
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains("show")) {
+                openDropdown.classList.remove("show");
+              }
+            }
+          }
+        };
+      </script>
+
+  <!-- <img src="../images/profilePic.svg" id="userIcon" />
+
+  <img src="../images/notificationIcon.svg" id="notification" /> -->
+
+  <div class="notification"></div>
+</div>
+
+<div class="dashDiscription">
+  <h2>Dashboard</h2>
+</div>
+
+<div id="dashBoardParagraph">
+  A quick data overview of the inventory and Customers
+</div>
+<!--
+<div class="dashBoardDescriptionParagraph">
+  A quick data overview of the inventory and Customers
+</div> -->
+<div class="sideBarContainer">
+  <img src="/images/dashboard/pharmacyLogo.svg" class="logoIcon" />
+
+  <div class="sideBarButtonContainer">
+    <a href="/pharmacy/dashboard">
+      <button class="dashboardButton">
+        Dashboard
+        <img
+                src="/images/dashboard/newDashboardIcon.svg"
+                id="dashboardButtonIcon"
+        />
+      </button>
+    </a>
+    <a href="/pharmacy/viewinventory">
+      <button class="iventoryButton">
+        Iventory
+        <img
+                src="/images/dashboard/iventoryButton.svg"
+                id="iventoryButtonIcon"
+        />
+      </button>
+    </a>
+    <a href="/pharmacy/viewpharmacy">
+      <button class="pharmacyButton">
+        Pharmacy
+        <img
+                src="/images/dashboard/newpharmacy.svg"
+                id="pharmacyButtonIcon"
+        />
+      </button>
+    </a>
+    <a href="/pharmacy/viewprescriptions">
+      <!-- <button class="prescriptionsButton"> -->
+      <button class="prescriptionsButton">
+        Prescriptions
+        <img
+                src="/images/dashboard/prescriptionButtonIcon.svg"
+                id="prescriptionButtonIcon"
+        />
+      </button>
+    </a>
+    <a href="/pharmacy/vieworders">
+      <button class="customerChatButton">
+        <!-- Chat With Customer -->
+        Orders
+        <img
+                src="/images/dashboard/chatButtonIcon.svg"
+                id="chatButtonIcon"
+        />
+      </button>
+    </a>
+    <a href="/pharmacy/settings">
+      <button class="applicationSettingsButton">
+        Application Settings
+        <img
+                src="/images/dashboard/ApplicationSettingsICon.svg"
+                id="ApplicationSettingsICon"
+        />
+      </button>
+    </a>
+    <a href="/pharmacy/technicalhelp">
+      <button class="getTechnicalHelpButton">
+        Get Technical Help
+        <img src="/images/dashboard/gethelpIcon.svg" id="gethelpICon" />
+      </button>
+    </a>
+  </div>
+</div>
+<div class="dashboardCardContainer" id="card1">
+  <img src="/images/dashboard/cartIcon.svg" class="cartIcon" />
+  <h3>Status</h3>
+  <h5>Inventory Status</h5>
+</div>
+
+<div class="dashboardCardContainer" id="card2">
+  <img src="/images/dashboard/medicineIcon.svg" class="medicineIcon" />
+  <h3>Count</h3>
+  <h5>Available Medicines</h5>
+</div>
+
+<div class="dashboardCardContainer" id="card3">
+  <img
+          src="/images/dashboard/mediCountICon.svg"
+          class="medicineCountIcon"
+  />
+  <h3>Count</h3>
+  <h5>Medicine Shortage</h5>
+</div>
+<div class="dashboardCardContainer" id="card4">
+  <img src="/images/dashboard/customerIcon.svg" class="customerIcon" />
+  <h3>Count</h3>
+  <h5>Customers</h5>
+</div>
+
+<div class="statusCardContainer" id="statusCard1">
+  <div class="statusCardHeader">Inventory Status</div>
+  <hr />
+  <div class="statusCardLeftSideUp">Count</div>
+  <div class="statusCardLeftSideDown">Total no of Medicines</div>
+  <div class="statusCardRightSideUp">Count</div>
+  <div class="statusCardRightSideDown">Medicine shortages</div>
+</div>
+
+<div class="statusCardContainer" id="statusCard2">
+  <div class="statusCardHeader">Pharmacy</div>
+  <hr />
+  <!-- <div class="statusCardLeftSideUp">Count</div> -->
+  <div class="statusCardLeftSideDown">Total no of Users</div>
+  <!-- <div class="statusCardRightSideUp">Count</div> -->
+  <div id="cardCountRightSideDown">Count</div>
+</div>
+
+<!--<div class="statusCardContainer" id="statusCard3">-->
+<!--  <div class="statusCardHeader">Customer</div>-->
+<!--  <hr />-->
+<!--  &lt;!&ndash; <div class="statusCardLeftSideUp">Count</div> &ndash;&gt;-->
+<!--  <div class="statusCardLeftSideDown">Total no of Customers</div>-->
+<!--  &lt;!&ndash; <div class="statusCardRightSideUp">Count</div> &ndash;&gt;-->
+<!--  <div id="cardCountRightSideDown">Count</div>-->
+<!--</div>-->
+<footer>
+  <div class="footerTextContainer">
+    <div class="footerUp" id="footerUp">Powered by</div>
+    <div class="footerDown">
+      <b>Noobz69</b>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

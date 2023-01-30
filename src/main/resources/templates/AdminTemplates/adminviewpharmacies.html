@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pharmacies</title>
+</head>
+<style>
+  body{
+    background-image: url(/images/loginSignup/PharmacyBG1Op12.png);
+  }
+  .topcontainer{
+    float: right;
+    height: 100px;
+    width: 70%;
+  }
+  input[id=logo]{
+    float: left;
+    height: 32px;
+    width: auto;
+    margin-top: 18px;
+    margin-left: 20px;
+  }
+  input[id=proficon]{
+    float: right;
+    height: 32px;
+    width: 32px;
+    padding: 18px;
+  }
+  input[id=topsrch]{
+    float: left;
+    margin-top: 10px;
+    margin-left: 10%;
+    height: 30px;
+    width: 400px;
+    border-radius: 10px;
+    border: 2px solid #068B2E;
+  }
+  .sidecontainer{
+    float: left;
+    width: 250px;
+    height: 690px;
+    border: 2px solid #f9f9f9;
+    background-color: #f9f9f9;
+    margin: 0px;
+  }
+  .sidebottom{
+    float: left;
+    width: 250px;
+    height: 60px;
+    border: 1px solid #068B2E;
+    background-color: #068B2E;
+    margin-top: 200px;
+  }
+  input[id=nbs]{
+    float: left;
+    width: 100px;
+    height: auto;
+    margin-top: 10px;
+    margin-left: 70px;
+  }
+  .sidebuttons{
+    float: left;
+    width: auto;
+    height: auto;
+    margin-top: 100px;
+    margin-left: 20px;
+  }
+  button[id=dash],[id=phar],[id=cust],[id=med],[id=ads],[id=sett],[id=tec],[id=lgout] {
+    width: 200px;
+    height: 30px;
+    align-self: auto;
+    margin-top: 5px;
+    font-size: 12pt;
+    border-radius: 10px;
+    border: 1px transparent;
+    background-color: transparent;
+  }
+  button[id=phar]{
+    background-color: #068B2E;
+    color: #f9f9f9;
+  }
+  .tablecontainer{
+    float: left;
+    width: 450px;
+    margin-left: 200px;
+  }
+  table[id=phar1]{
+    float: left;
+    width: 400px;
+    height: 60px;
+  }
+  .table1{
+    float: left;
+    width: 420px;
+    height: 80px;
+    padding-top: 5px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border: 2px solid #068b2e;
+  }
+  button[id=addph]{
+    width: 150px;
+    height: 30px;
+    margin: 5px;
+    margin-top: 100px;
+    color: #f9f9ff;
+    border: #068b2e;
+    background-color: #068b2e;
+    border-radius: 10px;
+  }
+  input[id=dltb]{
+    width: 16px;
+    height: 16px;
+    margin-left: 40px;
+  }
+  input[id=addbt]{
+    width: 56px;
+    height: 56px;
+  }
+  .addphar{
+    float: right;
+    margin-top: 40px;
+  }
+
+</style>
+<body>
+<div class="topcontainer">
+    <div class="topsearch">
+        <input id="topsrch" type="text" placeholder="Search for anything here.">
+    </div>
+    <input id="proficon" type="image" src="/images/loginSignup/user.png">
+</div>
+<div class="sidecontainer">
+    <input id="logo" type="image" src="/images/loginSignup/logowtext.png">
+    <div class="sidebuttons">
+        <a href="/admin/dashboard">
+            <button id="dash">Dashboard</button>
+        </a><br>
+        <a href="/admin/viewpharmacies">
+            <button id="phar">Pharmacies</button>
+        </a><br>
+        <a href="/admin/removecustomers">
+            <button id="cust">Customers</button>
+        </a><br>
+        <a href="/admin/removemedicine">
+            <button id="med">Medicine & Groceries</button>
+        </a><br>
+        <a href="/admin/viewads">
+            <button id="ads">Ads</button>
+        </a><br>
+        <a href="/admin/settings">
+            <button id="sett">Application Settings</button>
+        </a><br>
+        <a href="/admin/technicalhelp">
+            <button id="tec">Get Technical help</button>
+        </a><br>
+        <a href="/logout">
+            <button id="lgout">Logout</button>
+        </a>
+    </div>
+    <div class="sidebottom">
+        <input id="nbs" type="image" src="/images/loginSignup/poweredbynbs.png">
+    </div>
+</div>
+<div class="tablecontainer">
+    <h1>Registered Pharmacies</h1>
+    <br>
+    <th:block th:each="account : ${accountsList}">
+    <div class="table1">
+        <table id="phar1">
+                <tr>
+                    <th th:text="${account.pharmacyName}"></th>
+                    <th> </th>
+                    <th> </th>
+                    <th>
+                        <form action="#" th:action="@{/admin/deletepharmacy/{registrationId}(registrationId=${account.registrationId})}" method="post">
+                            <a>
+                                <input id="dltb" type="image" src="/images/loginSignup/delete.png">
+                            </a>
+                        </form>
+                    </th>
+                </tr>
+                <tr>
+                    <td>Owner Name</td>
+                    <td>Registration Id</td>
+                    <td>Contact No</td>
+                    <td>City</td>
+                </tr>
+                <tr>
+                    <td th:text="${account.ownerName}"></td>
+                    <td th:text="${account.registrationId}"></td>
+                    <td th:text="${account.contactNo}"></td>
+                    <td th:text="${account.city}"></td>
+                </tr>
+        </table>
+    </div>
+    </th:block>
+    <div class="addphar">
+        <a href="/admin/addpharmacy">
+            <input id="addbt" type="image" src="/images/loginSignup/add.png">
+        </a>
+    </div>
+</div>
+</body>
+</html>

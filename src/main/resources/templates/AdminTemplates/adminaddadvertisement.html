@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Advertisement</title>
+</head>
+<style>
+  body{
+    background-image: url(/images/loginSignup/PharmacyBG1Op12.png);
+  }
+  .topcontainer{
+    float: right;
+    height: 100px;
+    width: 70%;
+  }
+  input[id=logo]{
+    float: left;
+    height: 32px;
+    width: auto;
+    margin-top: 18px;
+    margin-left: 20px;
+  }
+  input[id=proficon]{
+    float: right;
+    height: 32px;
+    width: 32px;
+    padding: 18px;
+  }
+  .sidecontainer{
+    float: left;
+    width: 250px;
+    height: 690px;
+    border: 2px solid #f9f9f9;
+    background-color: #f9f9f9;
+    margin: 0px;
+  }
+  .sidebottom{
+    float: left;
+    width: 250px;
+    height: 60px;
+    border: 1px solid #068B2E;
+    background-color: #068B2E;
+    margin-top: 200px;
+  }
+  input[id=nbs]{
+    float: left;
+    width: 100px;
+    height: auto;
+    margin-top: 10px;
+    margin-left: 70px;
+
+  }
+  .sidebuttons{
+    float: left;
+    width: auto;
+    height: auto;
+    margin-top: 100px;
+    margin-left: 20px;
+  }
+  .form{
+    float: left;
+    width: 450px;
+    height: 100%;
+    margin-left: 200px;
+
+  }
+  button[id=dash],[id=phar],[id=cust],[id=med],[id=ads],[id=sett],[id=tec],[id=lgout] {
+    width: 200px;
+    height: 30px;
+    align-self: auto;
+    margin-top: 5px;
+    font-size: 12pt;
+    border-radius: 10px;
+    border: 1px transparent;
+    background-color: transparent;
+  }
+  button[id=ads]{
+    background-color: #068B2E;
+    color: #f9f9f9;
+  }
+  input[id=adTopic],[id=adId],[id=companyName],[id=details],[id=contact],[id=email],[id=companyAddress],[id=imageUrl]{
+    width: 400px;
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border: 2px solid #068b2e;
+  }
+  select[id=province],[id=district],[id=city]{
+    width: 130px;
+    height: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border: 2px solid #068B2E;
+  }
+  .selectprov,.selectdist,.selectcity{
+    float: left;
+    margin-right: 8px;
+  }
+  input[id=addb]{
+    float: left;
+    margin-top: 10px;
+    margin-left: 150px;
+    width: 100px;
+    height: 40px;
+    font-size: 12pt;
+    color: #f9f9f9;
+    border: #068B2E;
+    border-radius: 10px;
+    background-color: #068B2E;
+  }
+  input[id=topsrch]{
+    float: left;
+    margin-top: 10px;
+    margin-left: 10%;
+    height: 30px;
+    width: 400px;
+    border-radius: 10px;
+    border: 2px solid #068B2E;
+  }
+  .statbox{
+    float: left;
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+    border: 2px solid #068B2E;
+    margin-left: 50px;
+    margin-top: 200px;
+
+  }
+  p[id=stattxt]{
+    float: left;
+    width: 100px;
+    height: auto;
+    padding-left: 55px;
+  }
+  p[id=succ]{
+    float: left;
+    width: 130px;
+    margin-top: 40px;
+    padding-left: 10px;
+  }
+  input[id=tick]{
+    float: left;
+    width: 64px;
+    height: 64px;
+    margin-top: 20px;
+    margin-left: 45px;
+  }
+
+
+</style>
+<body>
+<div class="topcontainer">
+  <div class="topsearch">
+    <input id="topsrch" type="text" placeholder="Search for anything here.">
+  </div>
+  <input id="proficon" type="image" src="/images/loginSignup/user.png" alt="submit">
+</div>
+<div class="sidecontainer">
+  <input id="logo" type="image" src="/images/loginSignup/logowtext.png">
+  <div class="sidebuttons">
+    <a href="/admin/dashboard">
+      <button id="dash">Dashboard</button>
+    </a><br>
+    <a href="/admin/viewpharmacies">
+      <button id="phar">Pharmacies</button>
+    </a><br>
+    <a href="/admin/removecustomers">
+      <button id="cust">Customers</button>
+    </a><br>
+    <a href="/admin/removemedicine">
+      <button id="med">Medicine & Groceries</button>
+    </a><br>
+    <a href="/admin/viewads">
+      <button id="ads">Ads</button>
+    </a><br>
+    <a href="/admin/settings">
+      <button id="sett">Application Settings</button>
+    </a><br>
+    <a href="/admin/technicalhelp">
+      <button id="tec">Get Technical help</button>
+    </a><br>
+    <a href="/logout">
+      <button id="lgout">Logout</button>
+    </a>
+  </div>
+  <div class="sidebottom">
+    <input id="nbs" type="image" src="/images/loginSignup/poweredbynbs.png">
+  </div>
+</div>
+<div class="form">
+  <h1>Add Advertisement</h1>
+  <br>
+  <form action="#" th:action="@{/admin/addadvertisement}" th:object="${addDetails}" method="post">
+    <label for="adTopic">Advertisement Topic:</label><br>
+    <input type="text" id="adTopic" name="adTopic" th:field="*{topic}"><br>
+
+    <label for="adId">Advertisement ID:</label><br>
+    <input type="text" id="adId" name="adId" th:field="*{id}"><br>
+
+    <label for="companyName">Company Name:</label><br>
+    <input type="text" id="companyName" name="companyName" th:field="*{companyName}"><br>
+
+    <label for="details">Details:</label><br>
+    <input type="text" id="details" name="details" th:field="*{details}"><br>
+
+    <label for="contact">Contact:</label><br>
+    <input type="text" id="contact" name="contact" th:field="*{contact}"><br>
+
+    <label for="email">Email:</label><br>
+    <input type="text" id="email" name="email" th:field="*{email}"><br>
+
+    <label for="companyAddress">Company Address:</label><br>
+    <input type="text" id="companyAddress" name="companyAddress" th:field="*{companyAddress}"><br>
+
+    <label for="imageUrl">Image URL:</label><br>
+    <input type="text" id="imageUrl" name="imageUrl" th:field="*{imageUrl}"><br>
+
+    <input id="addb" type="submit" value="Add">
+  </form>
+</div>
+</body>
+</html>

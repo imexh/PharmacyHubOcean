@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+<a href="/admin/dashboard">
+    <button>Dashboard</button>
+</a>
+<a href="/admin/viewpharmacies">
+    <button>Pharmacies</button>
+</a>
+<a href="/admin/removecustomers">
+    <button>Customers</button>
+</a>
+<a href="/admin/removemedicine">
+    <button>Medicine & Groceries</button>
+</a>
+<a href="/admin/viewads">
+    <button>Ads</button>
+</a>
+<a href="/admin/settings">
+    <button>Application Settings</button>
+</a>
+<a href="/admin/technicalhelp">
+    <button>Get Technical help</button>
+</a>
+<a href="/logout">
+    <button>Logout</button>
+</a>
+<h1>Admin Dashboard</h1>
+
+<p><h2>Pharmacies Count: </h2><h2 th:text="${pharmacyCount}"></h2></p>
+<p><h2>Customers Count: </h2><h2 th:text="${customerCount}"></h2></p>
+<p><h2>Medicine Count: </h2><h2 th:text="${medicineCount}"></h2></p>
+<p><h2>Ads Count: </h2><h2 th:text="${adCount}"></h2></p>
+</body>
+</html>

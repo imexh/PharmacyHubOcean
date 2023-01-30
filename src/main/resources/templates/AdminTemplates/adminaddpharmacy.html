@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Pharmacy</title>
+</head>
+<style>
+  body{
+    background-image: url(/images/loginSignup/PharmacyBG1Op12.png);
+  }
+  .topcontainer{
+    float: right;
+    height: 100px;
+    width: 70%;
+  }
+  input[id=logo]{
+    float: left;
+    height: 32px;
+    width: auto;
+    margin-top: 18px;
+    margin-left: 20px;
+  }
+  input[id=proficon]{
+    float: right;
+    height: 32px;
+    width: 32px;
+    padding: 18px;
+  }
+  .sidecontainer{
+    float: left;
+    width: 250px;
+    height: 690px;
+    border: 2px solid #f9f9f9;
+    background-color: #f9f9f9;
+    margin: 0px;
+  }
+  .sidebottom{
+    float: left;
+    width: 250px;
+    height: 60px;
+    border: 1px solid #068B2E;
+    background-color: #068B2E;
+    margin-top: 200px;
+  }
+  input[id=nbs]{
+    float: left;
+    width: 100px;
+    height: auto;
+    margin-top: 10px;
+    margin-left: 70px;
+
+  }
+  .sidebuttons{
+    float: left;
+    width: auto;
+    height: auto;
+    margin-top: 100px;
+    margin-left: 20px;
+  }
+  .form{
+    float: left;
+    width: 450px;
+    height: 100%;
+    margin-left: 200px;
+
+  }
+  button[id=dash],[id=phar],[id=cust],[id=med],[id=ads],[id=sett],[id=tec],[id=lgout] {
+    width: 200px;
+    height: 30px;
+    align-self: auto;
+    margin-top: 5px;
+    font-size: 12pt;
+    border-radius: 10px;
+    border: 1px transparent;
+    background-color: transparent;
+  }
+  button[id=phar]{
+    background-color: #068B2E;
+    color: #f9f9f9;
+  }
+  input[id=pharmacyName],[id=ownerName],[id=registrationId],[id=contactNo],[id=password]{
+    width: 400px;
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border: 2px solid #068b2e;
+  }
+  select[id=province],[id=district],[id=city]{
+    width: 130px;
+    height: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border: 2px solid #068B2E;
+  }
+  .selectprov,.selectdist,.selectcity{
+    float: left;
+    margin-right: 8px;
+  }
+  input[id=addb]{
+    float: left;
+    margin-top: 10px;
+    margin-left: 150px;
+    width: 100px;
+    height: 40px;
+    font-size: 12pt;
+    color: #f9f9f9;
+    border: #068B2E;
+    border-radius: 10px;
+    background-color: #068B2E;
+  }
+  input[id=topsrch]{
+    float: left;
+    margin-top: 10px;
+    margin-left: 10%;
+    height: 30px;
+    width: 400px;
+    border-radius: 10px;
+    border: 2px solid #068B2E;
+  }
+  .statbox{
+    float: left;
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+    border: 2px solid #068B2E;
+    margin-left: 50px;
+    margin-top: 200px;
+
+  }
+  p[id=stattxt]{
+    float: left;
+    width: 100px;
+    height: auto;
+    padding-left: 55px;
+  }
+  p[id=succ]{
+    float: left;
+    width: 130px;
+    margin-top: 40px;
+    padding-left: 10px;
+  }
+  input[id=tick]{
+    float: left;
+    width: 64px;
+    height: 64px;
+    margin-top: 20px;
+    margin-left: 45px;
+  }
+
+
+</style>
+<body>
+<div class="topcontainer">
+  <div class="topsearch">
+    <input id="topsrch" type="text" placeholder="Search for anything here.">
+  </div>
+  <input id="proficon" type="image" src="/images/loginSignup/user.png" alt="submit">
+</div>
+<div class="sidecontainer">
+  <input id="logo" type="image" src="/images/loginSignup/logowtext.png">
+  <div class="sidebuttons">
+    <a href="/admin/dashboard">
+      <button id="dash">Dashboard</button>
+    </a><br>
+    <a href="/admin/viewpharmacies">
+      <button id="phar">Pharmacies</button>
+    </a><br>
+    <a href="/admin/removecustomers">
+      <button id="cust">Customers</button>
+    </a><br>
+    <a href="/admin/removemedicine">
+      <button id="med">Medicine & Groceries</button>
+    </a><br>
+    <a href="/admin/viewads">
+      <button id="ads">Ads</button>
+    </a><br>
+    <a href="/admin/settings">
+      <button id="sett">Application Settings</button>
+    </a><br>
+    <a href="/admin/technicalhelp">
+      <button id="tec">Get Technical help</button>
+    </a><br>
+    <a href="/logout">
+      <button id="lgout">Logout</button>
+    </a>
+  </div>
+  <div class="sidebottom">
+    <input id="nbs" type="image" src="/images/loginSignup/poweredbynbs.png">
+  </div>
+</div>
+<div class="form">
+  <h1>Add Pharmacy</h1>
+  <br>
+  <form action="#" th:action="@{/admin/addpharmacy}" th:object="${signupDetails}" method="post">
+    <label for="pharmacyName">Name of pharmacy:</label><br>
+    <input type="text" id="pharmacyName" name="pharmacyName" th:field="*{pharmacyName}"><br>
+
+    <label for="ownerName">Owner of the Pharmacy:</label><br>
+    <input type="text" id="ownerName" name="ownerName" th:field="*{ownerName}"><br>
+
+    <label for="registrationId">Registration ID:</label><br>
+    <input type="text" id="registrationId" name="registrationId" th:field="*{registrationId}"><br>
+
+    <label for="contactNo">Contact No:</label><br>
+    <input type="text" id="contactNo" name="contactNo" th:field="*{contactNo}"><br>
+    <div class="selectprov">
+      <label for="province">Province:</label><br>
+      <select name="province" id="province" th:field="*{province}">
+        <option value="Central">Central</option>
+        <option value="Eastern">Eastern</option>
+        <option value="Norhtern">Norhtern</option>
+        <option value="North Central">North Central</option>
+        <option value="North Western">North Western</option>
+        <option value="Sabaragamuwa">Sabaragamuwa</option>
+        <option value="Southern">Southern</option>
+        <option value="Uva">Uva</option>
+        <option value="Western">Western</option>
+      </select>
+    </div>
+    <div class="selectdist">
+      <label for="district">District:</label><br>
+      <select name="district" id="district" th:field="*{district}">
+        <option value="Ampara">Ampara</option>
+        <option value="Anuradhapura">Anuradhapura</option>
+        <option value="Badulla">Badulla</option>
+        <option value="Batticaloa">Batticaloa</option>
+        <option value="Colombo">Colombo</option>
+        <option value="Galle">Galle</option>
+        <option value="Gampaha">Gampaha</option>
+        <option value="Hambanthota">Hambanthota</option>
+        <option value="Jaffna">Jaffna</option>
+        <option value="Kalutara">Kalutara</option>
+        <option value="Kandy">Kandy</option>
+        <option value="Kegalle">Kegalle</option>
+        <option value="Kilinochchi">Kilinochchi</option>
+        <option value="Kurunegala">Kurunegala</option>
+        <option value="Mannar">Mannar</option>
+        <option value="Matale">Matale</option>
+        <option value="Matara">Matara</option>
+        <option value="Monaragala">Monaragala</option>
+        <option value="Mullativu">Mullativu</option>
+        <option value="Nuwara-Eliya">Nuwara-Eliya</option>
+        <option value="Polonnaruwa">Polonnaruwa</option>
+        <option value="Puttalam">Puttalam</option>
+        <option value="Ratnapura">Ratnapura</option>
+        <option value="Trincomalee">Trincomalee</option>
+        <option value="Vavuniya">Vavuniya</option>
+      </select>
+    </div>
+    <div class="selectcity">
+      <label for="city">City:</label><br>
+      <select name="city" id="city" th:field="*{city}">
+        <option value="Ambalangoda">Ambalangoda</option>
+        <option value="Ampara">Ampara</option>
+        <option value="Anuradapura">Anuradapura</option>
+        <option value="Avissawella">Avissawella</option>
+        <option value="Badulla">Badulla</option>
+        <option value="Balangoda">Balangoda</option>
+        <option value="Bandaragama">Bandaragama</option>
+        <option value="Bandarawela">Bandarawela</option>
+        <option value="Battaramulla">Battaramulla</option>
+        <option value="Batticaloa">Batticaloa</option>
+        <option value="Beruwala">Beruwala</option>
+        <option value="Boralesgamuwa">Boralesgamuwa</option>
+        <option value="Chavakacheri">Chavakacheri</option>
+        <option value="Chilaw">Chilaw</option>
+        <option value="Colombo">Colombo</option>
+        <option value="Dambulla">Dambulla</option>
+        <option value="Dankotuwa">Dankotuwa</option>
+        <option value="Dehiwala-Mount-Lavinia">Dehiwala-Mount-Lavinia</option>
+        <option value="Divulapitiya">Divulapitiya</option>
+        <option value="Dompe">Dompe</option>
+        <option value="Eheliyagoda">Eheliyagoda</option>
+        <option value="Embilipitiya">Embilipitiya</option>
+        <option value="Eravur">Eravur</option>
+        <option value="Galle">Galle</option>
+        <option value="Gampaha">Gampaha</option>
+        <option value="Gampola">Gampola</option>
+        <option value="Ganemulla">Ganemulla</option>
+        <option value="Hambantota">Hambantota</option>
+        <option value="Hanwella">Hanwella</option>
+        <option value="Haputale">Haputale</option>
+        <option value="Harispattuwa">Harispattuwa</option>
+        <option value="Hatton">Hatton</option>
+        <option value="Hendala">Hendala</option>
+        <option value="Homagama">Homagama</option>
+        <option value="Horana">Horana</option>
+        <option value="Jaffna">Jaffna</option>
+        <option value="Ja-Ela">Ja-Ela</option>
+        <option value="Kadawatha">Kadawatha</option>
+        <option value="Kadugannawa">Kadugannawa</option>
+        <option value="Kaduwela">Kaduwela</option>
+        <option value="Kalawana">Kalawana</option>
+        <option value="Kalmunai">Kalmunai</option>
+        <option value="Kalutara">Kalutara</option>
+        <option value="Kandana">Kandana</option>
+        <option value="Kandy">Kandy</option>
+        <option value="Kattankudy">Kattankudy</option>
+        <option value="Katunayake">Katunayake</option>
+        <option value="Kegalle">Kegalle</option>
+        <option value="Kelaniya">Kelaniya</option>
+        <option value="Kesbewa">Kesbewa</option>
+        <option value="Keselwatta">Keselwatta</option>
+        <option value="Kilinochchi">Kilinochchi</option>
+        <option value="Kiribathgoda">Kiribathgoda</option>
+        <option value="Kolonnawa">Kolonnawa</option>
+        <option value="Kotikawatta">Kotikawatta</option>
+        <option value="Kottawa">Kottawa</option>
+        <option value="Kotte">Kotte</option>
+        <option value="Kuliyapitiya">Kuliyapitiya</option>
+        <option value="Kurunegala">Kurunegala</option>
+        <option value="Maharagama">Maharagama</option>
+        <option value="Mahiyanganaya">Mahiyanganaya</option>
+        <option value="Malabe">Malabe</option>
+        <option value="Mannar">Mannar</option>
+        <option value="Marawila">Marawila</option>
+        <option value="Matale">Matale</option>
+        <option value="Matara">Matara</option>
+        <option value="Matugama">Matugama</option>
+        <option value="Mawanella">Mawanella</option>
+        <option value="Minuwangoda">Minuwangoda</option>
+        <option value="Mirigama">Mirigama</option>
+        <option value="Moneragala">Moneragala</option>
+        <option value="Moratuwa">Moratuwa</option>
+        <option value="Mullaitivu">Mullaitivu</option>
+        <option value="Mulleriyawa">Mulleriyawa</option>
+        <option value="Nattandiya">Nattandiya</option>
+        <option value="Nawalapitiya">Nawalapitiya</option>
+        <option value="Nawala">Nawala</option>
+        <option value="Negombo">Negombo</option>
+        <option value="Nittambuwa">Nittambuwa</option>
+        <option value="Nugegoda">Nugegoda</option>
+        <option value="Nuwara-Eliya">Nuwara-Eliya</option>
+        <option value="Padukka">Padukka</option>
+        <option value="Panadura">Panadura</option>
+        <option value="Pannala">Pannala</option>
+        <option value="Pannipitiya">Pannipitiya</option>
+        <option value="Peliyagoda">Peliyagoda</option>
+        <option value="Piliyandala">Piliyandala</option>
+        <option value="Polgahawela">Polgahawela</option>
+        <option value="Polonnaruwa">Polonnaruwa</option>
+        <option value="Puttalam">Puttalam</option>
+        <option value="Ragama">Ragama</option>
+        <option value="Ratnapura">Ratnapura</option>
+        <option value="Sigiriya">Sigiriya</option>
+        <option value="Talawakele">Talawakele</option>
+        <option value="Tangalle">Tangalle</option>
+        <option value="Trincomalee">Trincomalee</option>
+        <option value="Valvettithurai">Valvettithurai</option>
+        <option value="Vavuniya">Vavuniya</option>
+        <option value="Veyangoda">Veyangoda</option>
+        <option value="Warakapola">Warakapola</option>
+        <option value="Wattala">Wattala</option>
+        <option value="Wattegama">Wattegama</option>
+        <option value="Weligama">Weligama</option>
+        <option value="Welimada">Welimada</option>
+        <option value="Welisara">Welisara</option>
+        <option value="Wennappuwa">Wennappuwa</option>
+      </select>
+    </div><br>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" th:field="*{password}"><br>
+    <input id="addb" type="submit" value="Add">
+  </form>
+</div>
+<!--<div class="statbox" id="statbox">-->
+<!--  <p id="stattxt">Status</p>-->
+<!--  <input id="tick" type="image" src="/images/loginSignup/grntick.png">-->
+<!--  <p id="succ">Successfully Added</p>-->
+<!--</div>-->
+</body>
+</html>
