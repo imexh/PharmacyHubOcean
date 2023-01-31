@@ -3,118 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link rel="stylesheet" href="style/login.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2? family=Poppins:wght@100;200;300;400;600;700&display+swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
 </head>
-<style>
-    body{
-        background-image: url(images/loginSignup/PharmacyBG1Op12.png);
-    }
-    .topcontainer{
-        height: 100px;
-        width: auto;
-    }
-    .toprightbuttons{
-        float: right;
-        margin-top: 20px;
-    }
-    input[id=logo]{
-        float: left;
-        height: 60px;
-    }
-    button[id=about],[id=cont],[id=log],[id=sign]{
-        float: right;
-        height: 30px;
-        width: 100px;
-        border-radius: 10px;
-        font-size: 12pt;
-        border: transparent;
-        background-color: transparent;
-    }
-    button[id=log]{
-        border: #068B2E;
-        background-color: #068B2E;
-        color: #f9f9f9;
-    }
-    input[id=logb]{
-        width: 100px;
-        height: 30px;
-        border-radius: 10px;
-        font-size: 12pt;
-        margin-left: 150px;
-        margin-top: 5px;
-        border: #068B2E;
-        background-color: #068B2E;
-        color: #f9f9f9;
-    }
-    button[id=accreg]{
-        width: 250px;
-        height: 50px;
-        border-radius: 10px;
-        font-size: 12pt;
-        margin-left: 75px;
-        border: #068B2E;
-        background-color: #068B2E;
-        color: #f9f9f9;
-    }
-    .form{
-        float: left;
-        width: 450px;
-        height: 100%;
-        margin-left: 200px;
-    }
-    input[id=registrationId],[id=password]{
-        width: 400px;
-        height: 30px;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        border-radius: 10px;
-        border: 2px solid #068b2e;
-    }
-    .logimg{
-        float: right;
-    }
-    input[id=logpng]{
-        width: 400px;
-        height: 400px;
-        margin-top: 80px;
-        margin-right: 250px;
-    }
-</style>
-<body>
-<div class="topcontainer">
-    <a href="/"><input id="logo" type="image" src="images/loginSignup/logowtext.png"></a>
-    <div class="toprightbuttons">
-        <a href="/aboutus">
-            <button id="about">About Us</button>
-        </a>
-        <a href="/contactus">
-            <button id="cont">Contact Us</button>
-        </a>
-        <a href="/login">
-            <button id="log">Login</button>
-        </a>
-        <a href="/signup">
-            <button id="sign">Signup</button>
-        </a>
-    </div>
-</div>
-<div class="form">
-    <h1>Login</h1>
-    <form action="#" th:action="@{/login}" th:object="${loginDetails}" method="post">
-        <label for="registrationId">Registration ID:</label>
-        <input type="text" id="registrationId" name="registrationId" th:field="*{registrationId}">
+<body background="images/loginSignup/Background1.png">
+    <section class="header">
+        <nav>
+            <a href="/index"><img src="images/loginSignup/Logo2.png"></a>
+            <div class="Links">
+                <ul>
+                    <li><a href="/aboutus">About Us</a></li>
+                    <li><a href="/contactus">Contact Us</a></li>
+                    <li><a href="/login">Log in</a></li>
+                    <ul class="dropmenu2">
+                        <li><a href="#"><i class="fa fa-user-circle-o" aria-hidden="true">Log in as Admin</i></a></li>
+                        <li><a href="#"><i class="fa fa-user-circle-o" aria-hidden="true">Log in as Pharmacist</i></a></li>
+                    </ul>
+                    <li><a href="/signup">Sign Up</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="formBG">
+            <div class="text-box">
+                <h1>Login</h1>
+            </div>
+            <div class="form">
+                <form action="#" th:action="@{/login}" th:object="${loginDetails}" method="post">
+                    <label for="registrationId">Registration ID:</label>
+                    <input type="text" required id="registrationId" name="registrationId" th:field="*{registrationId}" placeholder="Enter your registration ID here..">
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" th:field="*{password}">
+                    <label for="password">Password:</label>
+                    <input type="password" required id="password" name="password" th:field="*{password}" placeholder="Enter your password here..">
 
-        <input id="logb" type="submit" value="Login">
-    </form>
-    <br>
-    <a href="/signup">
-        <button id="accreg">Don't Have an Account yet? Register here</button>
-    </a>
-</div>
-<div class="logimg">
-    <input id="logpng" type="image" src="images/loginSignup/pharmacistlog.png">
-</div>
+                    <input id="logb" type="submit" value="Login">
+                </form>
+                <br>
+                <p id="accreg">Don't have an account yet? <a href="/signup" style="color:dodgerblue">Sign up</a>.</p>
+            </div>
+            <div class="logimg">
+                <input id="logpng" type="image" src="images/loginSignup/loginImage.png">
+            </div>
+        </div>
+
+    </section>
 </body>
 </html>

@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,500;0,600;0,700;0,800;0,900;1,100;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    
+body{
+  height: 100vh;
+  overflow: hidden;
+  display: block;
+}
+.logo{
+  padding-left: 13px;
+  margin-right: 67px;
+  margin-top: 5px;
+
+}
+
+
+
+
+.user-name{
+    margin-right:30px;
+}
+
+.user-img{
+  height: 25px;
+  width:50px;
+  height:50px;
+  border: none;
+  margin-right:20px;
+}
+
+
+.drop-down{
+   margin-left: 80px;
+   margin-right: 10px;
+   vertical-align: middle;
+   display: inline;
+
+}
+
+.notifications.img{
+  height: 25px;
+  
+}
+
+.side-bar{
+  height: 100vh;
+ 
+}
+
+.menu-items{
+ 
+  width: 250px;
+}
+
+
+.menu-container{
+  height:25px;
+  width: 241px;
+  margin-left: 30px;
+}
+
+.menu-item{
+  margin-bottom: 15.05px;
+  margin-left: 15px;
+  margin-right: 10px;
+}
+
+.menu-item-i{
+  padding-top: 5px;
+  padding-left: 15px;
+  padding-bottom: 5px;
+  margin-bottom: 15.05px;
+  margin-right: 10px;
+  background: rgba(6, 139, 46, 0.9);
+  border-radius: 15px;
+
+}
+.item-des{
+  display: inline-block;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  align-items: center;
+  color: #1E1E1E;
+
+}
+
+.footer{
+ 
+background: #068B2E;
+position: absolute;
+left: 0;
+ width: 290px;
+ bottom: 0;
+}
+.footer-image{
+    display: inline;
+    vertical-align: middle;
+    margin-top: 10px;
+    margin-left: 110px;
+    margin-bottom: 10px;
+    
+
+}
+
+.bg-pic{
+  object-fit:cover;
+  position: relative;
+  
+  
+}
+.header {
+  height: 60px;
+  background: #F9F9F9;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  left: 290px;
+  top: 0;
+  right: 0;
+
+}
+
+.middle-section{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex: 1 ;
+      margin-left: 70px;
+      margin-right: 35px;
+      max-width: 500px;
+
+}
+
+.right-section{
+
+width: 180px;
+flex-direction: row;
+display: flex;
+align-items: center;
+margin-right: 20px;
+justify-content:right;
+flex-shrink: 0;
+
+}
+
+.arrow-btn{
+  display: inline-block;
+  margin-left: 10px;
+  align-self: center;
+  margin-bottom: 2px;
+
+
+}
+
+
+.des-panel{
+position: absolute;
+top: 80px;
+left: 32px;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 24px;
+color: #1c1d1e80;
+
+}
+
+.des-panel2{
+position: absolute;
+top:111px;
+left: 57px;
+font-family: 'Poppins';
+font-style:normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 24px;
+
+}
+
+
+.add-item-btn{
+  position: absolute;
+top:80px;
+right: 57px;
+font-family: 'Poppins';
+font-weight: 400;
+font-size: 15px;
+background-color:  #068B2E;
+color: white;
+padding: 12px 15px;
+border-radius: 8px;
+border: none;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 0px 2px 8px 0px;
+
+}
+
+.bar{
+flex:1;
+height: 35px;
+padding-left: 10px;
+font-size: 12px;
+font-family:Poppins;
+color: rgba(29, 36, 46, 0.5);
+border: 2px solid #068B2E;
+border-radius: 8px;
+width: 10px;
+
+}
+
+
+
+.table-container{
+  position: absolute;
+  top:200px;
+  left: 32px;
+  ;  
+
+}
+
+.inventory-search-container{
+ 
+  position: absolute;
+  top: 160px;
+  left: 70px;
+  height: 35px;
+  padding-left: 10px;
+  background-color: white;
+  color: rgba(29, 36, 46, 0.5);
+  border: 2px solid #068B2E;
+  border-radius: 8px;
+  width: 20rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.Inventory-search{
+  font-size: 12px;
+  font-family:Poppins;
+  width: 90%;
+  height: 30px;
+  border: none;
+  
+
+}
+.Inventory-search:focus{
+  outline: none;
+}
+
+.search-icon{
+width: 18px;
+margin-top: 5px;
+}
+
+
+ table {
+  width: 1000px;
+  display:block;
+  text-align: center;
+  border: 2px solid black;
+  margin-top: 30px;
+  font-family: 'Poppins';
+  background-color: white;
+ 
+}
+
+thead th, tbody td{
+  width: 200px;
+  padding: 10px;
+}
+
+thead {
+  display: inline-block;
+  width: 100%;
+  background-color: #D9D9D9;
+  border-bottom: 2px solid black;
+
+}
+tbody {
+  height: 350px;
+  display: inline-block;
+  width: 100%;
+  overflow: auto;
+ 
+}
+
+td a{
+  text-decoration: none;
+  color: #3e3c3cd1;
+  display: flex;
+  gap: 1px;
+  align-items: center;
+}

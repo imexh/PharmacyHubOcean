@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+nav{
+    display: flex;
+    padding: 1% 1%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 70%;   
+}
+.Links{
+    flex: 10;
+    text-align: right;
+}
+.Links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.Links ul li a{
+    color: #3f3f3f;
+    text-decoration: none;
+    font-size: 15px;
+}
+.Links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #068B2E;
+    display: block;
+    margin: auto;    
+}
+.Links ul li:hover::after{
+    width: 100%;
+    transition: 0.5s;
+}
+.type2{
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-120%);
+}
+
+.dropmenu2 .fa{
+    margin-right: 8px;
+}
+.dropmenu2{
+    display: none;
+}
+.Links ul li:hover .dropmenu2{
+    display: block;
+    position: absolute;
+    background: #068B2E;
+    margin-top: 15px;
+    margin-left: -15px;
+}
+.Links ul li:hover .dropmenu2 ul{
+    display: block;
+    margin: 10px;
+}
+.text-box h1{
+    width: 90%;
+    position: absolute;
+    top: 18%;
+    left:16.8%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    font-size: 65px;
+}
+.form{
+    position: absolute;
+    width: 450px;
+    height: 100px;
+    top: 250px;
+    left: 9.3%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+input[id=pharmacyName],[id=ownerName],[id=registrationId],[id=contactNo],[id=password],[id=confirmPassword], [id=imageUrl]{
+    width: 450px;
+    height: 20px;
+    margin-top: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #068b2e;
+}
+select[id=province],[id=district],[id=city]{
+    width: 142px;
+    height: 40px;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #068B2E;
+}
+.selectprov,.selectdist,.selectcity{
+    float: left;
+    margin-right: 8px;
+}
+input[id=regb]{
+    float: left;
+    margin-top: 20px;
+    margin-left: 180px;
+    width: 100px;
+    height: 40px;
+    font-size: 12pt;
+    color: #f9f9f9;
+    border: #068B2E;
+    border-radius: 10px;
+    background-color: #068B2E;
+    margin-bottom: 500px;
+    cursor: pointer;
+}
+
+.signimg{
+    position: absolute;
+    top: 170px;
+    left: 850px;
+    height: 400px;
+}
+input[id=signpng]{
+    position:relative;
+    width: 100%;
+    margin-top: 80px;
+    float: right;
+    cursor:pointor;
+}
+p {
+    margin-top:830px;
+    margin-bottom:50px;
+    margin-left:240px;
+}

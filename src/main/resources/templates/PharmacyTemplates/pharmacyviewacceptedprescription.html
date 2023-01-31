@@ -4,7 +4,7 @@
   <title th:text="${prescription.prescriptionId}">Prescription</title>
 </head>
 
-<link rel="stylesheet" href="/style/dashboard.css" />
+<link rel="stylesheet" href="/style/pharmacyViewAcceptedPrescriptions.css">
 <body>
 <img
         src="/images/dashboard/PharmacyBG1.png"
@@ -13,61 +13,49 @@
 />
 
 <div class="navBarContainer">
-  <div class="wrap">
-    <div class="search">
-      <input
-              type="text"
-              class="searchTerm"
-              placeholder="Search for anything here..."
-      />
-    </div>
-  </div>
+
   <!-- setting the clicable dropdown -->
   <div class="dropdown">
     <button onclick="myFunction()" class="dropbtn">
       <!-- <button onclick="myFunction()" id="userIcon"> -->
-      <!-- <img src="../../public/images//profilePic.svg" id="userIcon" /> -->
-      <img
-              src="/images/dashboard/profilePic.svg"
-              class="dropbtn"
-              height="10px"
-              width="10px"
-      />
+      <!-- <img src="../images/profilePic.svg" id="userIcon" /> -->
+      <img src="/images/dashboard/profilePic.svg" class="dropbtn" />
     </button>
     <div id="myDropdown" class="dropdown-content">
-      <a href="">My Profile</a>
+      <a href="/pharmacy/viewpharmacy">My Profile</a>
       <a href="/logout">Logout</a>
       <!-- <a href="">Contact</a> -->
     </div>
   </div>
 
   <script>
-        /* When the user clicks on the button,
-      toggle between hiding and showing the dropdown content */
-        function myFunction() {
-          document.getElementById("myDropdown").classList.toggle("show");
-        }
+    /* When the user clicks on the button,
+  toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
 
-        // Close the dropdown if the user clicks outside of it
-        window.onclick = function (event) {
-          if (!event.target.matches(".dropbtn")) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-              var openDropdown = dropdowns[i];
-              if (openDropdown.classList.contains("show")) {
-                openDropdown.classList.remove("show");
-              }
-            }
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+      if (!event.target.matches(".dropbtn")) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains("show")) {
+            openDropdown.classList.remove("show");
           }
-        };
-      </script>
+        }
+      }
+    };
+  </script>
 
+  <!-- testing for notification -->
   <!-- testing for notification -->
   <div class="dropdownNotify">
     <button onclick="myFunctionNotify()" class="dropbtnNotify">
       <!-- <button onclick="myFunction()" id="userIcon"> -->
-      <!-- <img src="../../public/images//profilePic.svg" id="userIcon" /> -->
+      <!-- <img src="../images/profilePic.svg" id="userIcon" /> -->
       <img
               src="/images/dashboard/notificationIcon.svg"
               class="dropbtnNotify"
@@ -82,41 +70,40 @@
 
   <!-- end -->
   <script>
-        /* When the user clicks on the button,
-  toggle between hiding and showing the dropdown content */
-        function myFunctionNotify() {
-          document.getElementById("myDropdownNotify").classList.toggle("show");
-        }
+    /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+    function myFunctionNotify() {
+      document.getElementById("myDropdownNotify").classList.toggle("show");
+    }
 
-        // Close the dropdown if the user clicks outside of it
-        window.onclick = function (event) {
-          if (!event.target.matches(".dropbtnNotify")) {
-            var dropdowns = document.getElementsByClassName(
-              "dropdownNotify-content"
-            );
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-              var openDropdown = dropdowns[i];
-              if (openDropdown.classList.contains("show")) {
-                openDropdown.classList.remove("show");
-              }
-            }
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+      if (!event.target.matches(".dropbtnNotify")) {
+        var dropdowns = document.getElementsByClassName(
+                "dropdownNotify-content"
+        );
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains("show")) {
+            openDropdown.classList.remove("show");
           }
-        };
-      </script>
+        }
+      }
+    };
+  </script>
 
-  <!-- <img src="../../public/images//profilePic.svg" id="userIcon" />
+  <!-- <img src="../images/profilePic.svg" id="userIcon" />
 
-  <img src="../../public/images//notificationIcon.svg" id="notification" /> -->
+  <img src="../images/notificationIcon.svg" id="notification" /> -->
 
   <div class="notification"></div>
 </div>
 
 <div class="dashDiscription">
-  <h2>Prescription</h2>
+  <h2>Customer Requests</h2>
 </div>
 
-<div id="dashBoardParagraph">Customer Requests</div>
 <!--
 <div class="dashBoardDescriptionParagraph">
   A quick data overview of the inventory and Customers
@@ -124,95 +111,139 @@
 <div class="sideBarContainer">
   <img src="/images/dashboard/pharmacyLogo.svg" class="logoIcon" />
 
-  <div class="sideBarButtonContainer">
-    <a href="/pharmacy/dashboard">
-      <button class="dashboardButton">
-        Dashboard
-        <img
-                src="/images/dashboard/newDashboardIcon.svg"
-                id="dashboardButtonIcon"
-        />
-      </button>
-    </a>
-    <a href="/pharmacy/viewinventory">
-      <button class="iventoryButton">
-        Iventory
-        <img
-                src="/images/dashboard/iventoryButton.svg"
-                id="iventoryButtonIcon"
-        />
-      </button>
-    </a>
-    <a href="/pharmacy/viewpharmacy">
-      <button class="pharmacyButton">
-        Pharmacy
-        <img
-                src="/images/dashboard/newpharmacy.svg"
-                id="pharmacyButtonIcon"
-        />
-      </button>
-    </a>
-    <a href="/pharmacy/viewprescriptions">
-      <!-- <button class="prescriptionsButton"> -->
-      <button class="prescriptionsButton">
-        Prescriptions
-        <img
-                src="/images/dashboard/prescriptionButtonIcon.svg"
-                id="prescriptionButtonIcon"
-        />
-      </button>
-    </a>
-    <a href="/pharmacy/vieworders">
-      <button class="customerChatButton">
-        <!-- Chat With Customer -->
-        Orders
-        <img
-                src="/images/dashboard/chatButtonIcon.svg"
-                id="chatButtonIcon"
-        />
-      </button>
-    </a>
-    <a href="/pharmacy/settings">
-      <button class="applicationSettingsButton">
-        Application Settings
-        <img
-                src="/images/dashboard/ApplicationSettingsICon.svg"
-                id="ApplicationSettingsICon"
-        />
-      </button>
-    </a>
-    <a href="/pharmacy/technicalhelp">
-      <button class="getTechnicalHelpButton">
-        Get Technical Help
-        <img src="/images/dashboard/gethelpIcon.svg" id="gethelpICon" />
-      </button>
-    </a>
+  <div class="sideBarContainer">
+    <img src="/images/dashboard/pharmacyLogo.svg" class="logoIcon" />
+
+    <div class="sideBarButtonContainer">
+      <a href="/pharmacy/dashboard">
+        <button
+                onclick="document.location='pharmacydashboard.html'"
+                class="dashboardButton"
+        >
+          <div id="dashboardLine">Dashboard</div>
+          <img
+                  src="/images/dashboard/newDashboardIcon.svg"
+                  id="dashboardButtonIcon"
+          />
+        </button>
+      </a>
+
+      <a href="/pharmacy/viewinventory">
+        <button class="iventoryButton">
+          <div id="iventoryLine">Inventory</div>
+          <img
+                  src="/images/dashboard/iventoryButton.svg"
+                  id="iventoryButtonIcon"
+          />
+        </button>
+      </a>
+      <a href="/pharmacy/viewprescriptions">
+        <button
+                onclick="document.location='pharmacyviewprescriptions.html'"
+                class="prescriptionsButton"
+        >
+          <div id="prescriptionLine">Prescriptions</div>
+          <img
+                  src="/images/dashboard/prescriptionButtonIcon.svg"
+                  id="prescriptionButtonIcon"
+          />
+        </button>
+      </a>
+      <a href="/pharmacy/vieworders">
+        <button class="customerChatButton">
+          <img src="/images/dashboard/cart.svg" id="chatButtonIcon" />
+          <div id="chatLine">Orders</div>
+        </button>
+      </a>
+
+      <a href="/pharmacy/viewpharmacy">
+        <button class="profileButton">
+          <img src="/images/dashboard/profile.png" id="profileButtonIcon" />
+          <div id="profileLine">Profile</div>
+        </button>
+      </a>
+
+      <a href="/pharmacy/settings">
+        <button class="applicationSettingsButton">
+          <div id="applicationSettingsLine">Settings</div>
+
+          <img
+                  src="/images/dashboard/ApplicationSettingsICon.svg"
+                  id="ApplicationSettingsICon"
+          />
+        </button>
+      </a>
+      <a href="/pharmacy/technicalhelp">
+        <button class="getTechnicalHelpButton">
+          <div id="getTechnicalHelpLine">Get Technical Help</div>
+          <img src="/images/dashboard/gethelpIcon.svg" id="gethelpICon" />
+        </button>
+      </a>
+      <a href="/logout">
+        <button class="logOutButton">
+          <div id="logOutLine">Log Out</div>
+          <img src="/images/profile/logout.png" id="logOutIcon" />
+        </button>
+      </a>
+    </div>
   </div>
-</div>
-<div class="customerOrderContainer">
-  <div class="prescriptionImageContainer">
-    <img src="https://www.researchgate.net/publication/345830022/figure/fig4/AS:957640029003789@1605330583881/Sample-prescription-used-as-input-to-the-GUI-developed-in-the-present-work.png"
-         id="prescriptionImg"
-         alt="prescriptions"
-    />
+  <div class="customerOrderContainer">
+    <div class="prescriptionImageContainer">
+      <img
+              src="https://www.researchgate.net/publication/345830022/figure/fig4/AS:957640029003789@1605330583881/Sample-prescription-used-as-input-to-the-GUI-developed-in-the-present-work.png"
+              id="prescriptionImg"
+              alt="prescriptions"
+      />
+
+
+    </div>
+    <!-- <button class="readyorder">Ready Order</button> -->
   </div>
+
   <div class="orderConfirmation">
-    <div class="customerName" th:text="${prescription.prescriptionId}">Customer Name</div>
-    <div class="orderType" th:text="${prescription.customerUsername}">Customer Username</div>
-    <div class="orderDate" th:text="${prescription.price}">Price</div>
-    <div class="pharmacyName" th:text="${prescription.remarks}">Remarks</div>
-    <div class="orderDate" th:text="${prescription.date}">Date</div>
-    <div class="pharmacyName" th:text="${prescription.status}">Status</div>
+    <div class="prescriptionId">Id :</div>
+    <div class="prescriptionIdData" th:text="${prescription.prescriptionId}"></div>
+
+    <div class="pharmacyCustomer">Customer :</div>
+    <div class="pharmacyCustomerData" th:text="${prescription.customerUsername}"></div>
+
+    <div class="date">Date :</div>
+    <div class="dateData" th:text="${prescription.date}"></div>
+
+    <div class="status">Status :</div>
+    <div class="statusData" th:text="${prescription.status}"></div>
+
+    <div class="remarks">Remarks :</div>
+    <div class="remarksData" th:text="${prescription.remarks}"></div>
+
+    <div class="price">Price :</div>
+    <div class="priceData" th:text="${prescription.price}"></div>
+
   </div>
+
 
   <form action="#" th:action="@{/pharmacy/deleteprescription/{prescriptionId}(prescriptionId=${prescription.prescriptionId})}" method="post">
-    <!-- <input class="addNewMedicineBtn" type="submit" value="Accept Order"> -->
-    <a>
-      <button class="addNewMedicineBtn">Mark as Completed</button>
-    </a>
+      <!-- <input class="addNewMedicineBtn" type="submit" value="Accept Order"> -->
+      <a>
+        <button class="addNewMedicineBtn">Mark as Completed</button>
+      </a>
 
-  </form>
+    </form>
 
+
+
+
+
+
+
+  <!--<div class="statusCardContainer" id="statusCard3">-->
+  <!--  <div class="statusCardHeader">Customer</div>-->
+  <!--  <hr />-->
+  <!--  &lt;!&ndash; <div class="statusCardLeftSideUp">Count</div> &ndash;&gt;-->
+  <!--  <div class="statusCardLeftSideDown">Total no of Customers</div>-->
+  <!--  &lt;!&ndash; <div class="statusCardRightSideUp">Count</div> &ndash;&gt;-->
+  <!--  <div id="cardCountRightSideDown">Count</div>-->
+  <!--</div>-->
   <footer>
     <div class="footerTextContainer">
       <div class="footerUp" id="footerUp">Powered by</div>
@@ -221,5 +252,7 @@
       </div>
     </div>
   </footer>
+
+</div>
 </body>
 </html>

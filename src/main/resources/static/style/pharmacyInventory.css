@@ -1,0 +1,1722 @@
+body
+{
+  font-family: 'Poppins', sans-serif;
+}
+/* nav bar */
+.navBarContainer {
+  position: absolute;
+  /* 2023.01.16 */
+  width: 81%;
+  /* width: 1198px; */
+
+  height: 59px;
+  left: 290px;
+  top: 0px;
+
+  background-color: #F9F9F9;
+}
+
+
+
+/*Resize the wrap to see the search bar change!*/
+.wrap {
+  box-sizing: border-box;
+  width: 300px;
+  height: 35px;
+  position: absolute;
+  top: 30px;
+  left: 295px;
+  transform: translate(-50%, -50%);
+  font-family: "Poppins", sans-serif;
+
+  background: #ffffff;
+
+  border-radius: 8px;
+}
+#userIcon {
+  position: absolute;
+
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+  right: 70px;
+  top: 16px;
+
+  background: #f9fffd;
+
+  opacity: 100%;
+}
+#notification {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+
+  right: 10px;
+  top: 16px;
+
+  background: #f9fffd;
+  opacity: 100%;
+}
+/* testing drop down for notification */
+.dropbtn {
+  background-color: #f1f3f4;
+  color: rgb(250, 244, 244);
+  /* padding: 16px;
+  font-size: 16px; */
+  border: none;
+  cursor: pointer;
+
+  width: 35px;
+  height: 35px;
+
+  border-radius: 50%;
+
+  /* position: absolute; */
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+  /* background-color: #29b97d; */
+  background-color: #fff9f9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  left: 1000px;
+  top: 11px;
+}
+
+.dropdown-content {
+  display: none;
+  font-family: "Poppins", sans-serif;
+  /* float: left; */
+  right: 0;
+  position: absolute;
+  background-color: #fff9f9;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(172, 156, 156, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: rgb(4, 172, 71);
+}
+
+.show {
+  display: block;
+}
+
+/* testing for notification */
+.dropbtnNotify {
+  background-color: #f1f3f4;
+  color: rgb(250, 244, 244);
+  /* padding: 16px;
+  font-size: 16px; */
+  border: none;
+  cursor: pointer;
+
+  width: 35px;
+  height: 35px;
+
+  border-radius: 50%;
+
+  /* position: absolute; */
+}
+
+.dropbtnNotify:hover,
+.dropbtnNotify:focus {
+  background-color: #f6fbf9;
+}
+
+.dropdownNotify {
+  position: relative;
+  display: inline-block;
+  left: 1020px;
+  top: 11px;
+}
+
+.dropdownNotify-content {
+  display: none;
+  font-family: "Poppins", sans-serif;
+
+  /* float: left; */
+  right: 0;
+  position: absolute;
+  background-color: #fff9f9;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(172, 156, 156, 0.2);
+  z-index: 1;
+}
+
+.dropdownNotify-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: "Poppins", sans-serif;
+}
+
+.dropdownNotify a:hover {
+  background-color: rgb(4, 172, 71);
+}
+
+.show {
+  display: block;
+}
+/* end of the nav bar */
+
+/* side bar */
+.sideBarContainer {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f2f2f2;
+  position: absolute;
+  width: 291px;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  opacity: 10%;
+  overflow: hidden;
+}
+
+.logoIcon {
+  position: absolute;
+  width: 210px;
+  height: 62px;
+  left: 13px;
+  top: 5px;
+  opacity: 100%;
+}
+.sideBarButtonContainer {
+  position: absolute;
+  left: 5.21%;
+  right: 88.06%;
+  top: 5px;
+  bottom: 79.81%;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+}
+.dashboardButton {
+  position: absolute;
+  width: 241px;
+  height: 31px;
+  left: 18px;
+  top: 110px;
+  border: #fbf6f6;
+}
+
+.iventoryButton {
+  position: absolute;
+  width: 241px;
+  height: 31px;
+  left: 18px;
+  top: 145px;
+  border: #fbf6f6;
+}
+.prescriptionsButton {
+  position: absolute;
+  width: 241px;
+  height: 31px;
+  left: 18px;
+  top: 180px;
+  border: #fbf6f6;
+}
+.customerChatButton {
+  position: absolute;
+  width: 241px;
+  height: 31px;
+  left: 18px;
+  top: 215px;
+  border: #fbf6f6;
+}
+.profileButton {
+  position: absolute;
+  width: 241px;
+  height: 31px;
+  left: 18px;
+  top: 250px;
+  border: #fbf6f6;
+}
+.applicationSettingsButton {
+  position: absolute;
+  width: 241px;
+  height: 31px;
+  left: 18px;
+  top: 285px;
+  border: #fbf6f6;
+}
+.getTechnicalHelpButton {
+  position: absolute;
+  width: 241px;
+  height: 31px;
+  left: 18px;
+  top: 320px;
+  border: #fbf6f6;
+}
+/* new logout button */
+.logOutButton {
+  position: absolute;
+  width: 241px;
+  height: 31px;
+  left: 18px;
+  top: 355px;
+  border: #fbf6f6;
+}
+
+#dashboardButtonIcon,
+#iventoryButtonIcon,
+#pharmacyButtonIcon,
+#prescriptionButtonIcon,
+#chatButtonIcon,
+#logOutIcon,
+#profileButtonIcon,
+#ApplicationSettingsICon,
+#gethelpICon {
+  position: absolute;
+  left: 8px;
+  top: 4px;
+  width: 24px;
+  height: 24px;
+}
+
+
+.dashboardButton,
+.iventoryButton,
+.pharmacyButton,
+.prescriptionsButton,
+.customerChatButton,
+.profileButton,
+.applicationSettingsButton,
+.getTechnicalHelpButton,
+.logOutButton {
+  border-radius: 15px;
+}
+
+.dashboardButton:hover {
+  background-color: #068b2e;
+  color: white;
+}
+.iventoryButton:hover {
+  background-color: #068b2e;
+  color: white;
+}
+.pharmacyButton:hover {
+  background-color: #068b2e;
+  color: white;
+}
+.prescriptionsButton:hover {
+  background-color: #068b2e;
+  color: white;
+}
+.customerChatButton:hover {
+  background-color: #068b2e;
+  color: white;
+}
+.profileButton:hover {
+  background-color: #068b2e;
+  color: white;
+}
+.applicationSettingsButton:hover {
+  background-color: #068b2e;
+  color: white;
+}
+.getTechnicalHelpButton:hover {
+  background-color: #068b2e;
+  color: white;
+}
+.logOutButton:hover {
+  background-color: #068b2e;
+  color: white;
+}
+
+#dashboardLine {
+  left: 24px;
+}
+#iventoryLine {
+  left: 21px;
+}
+#pharmacyLine {
+  left: 23px;
+}
+
+#chatLine {
+  left: 11px;
+}
+#profileLine {
+  left: 11px;
+}
+#prescriptionLine {
+  left: 31px;
+}
+#applicationSettingsLine {
+  left: 15px;
+}
+#getTechnicalHelpLine {
+  left: 47px;
+}
+#logOutLine {
+  left: 17px;
+}
+#dashboardLine,
+#iventoryLine,
+#pharmacyLine,
+#pharmacyLine,
+#chatLine,
+#prescriptionLine,
+#profileLine,
+#applicationSettingsLine,
+#getTechnicalHelpLine,
+#logOutLine {
+  position: absolute;
+  width: 141px;
+  top: 7px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* side bar */
+/* footer */
+.footerTextContainer {
+  bottom: 5px;
+}
+footer {
+  /* position: absolute; */
+  position: absolute;
+  width: 290px;
+  height: 60px;
+  /* top: 600px; */
+  left: 0px;
+  /* top: 772px; */
+  bottom: 0px;
+  background-color: #068b2e;
+}
+.footerTextContainer {
+  font-size: small;
+  color: aliceblue;
+  position: relative;
+  left: 100px;
+  top: 10px;
+  font-family: "Poppins", sans-serif;
+}
+#footerUp {
+  font-size: 10px;
+}
+/* end of the footer */
+
+/* Pharmacy Chat */
+.container{
+  position: absolute;
+  width: 500px;
+  left: 800px;
+  top: 100px;
+
+}
+button[id=c1]{
+  position: absolute;
+  right: 170px;
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  border-color: transparent;
+  font-family: "Poppins", sans-serif;
+}
+input[id=msgin]{
+  position: absolute;
+  width: 300px;
+  height: 35px;
+  left: 10px;
+  top: 510px;
+  border-radius: 10px;
+  border-color: #068B2E;
+  font-family: "Poppins", sans-serif;
+}
+.chatscrn{
+  float: right;
+  width: 750px;
+  height: 550px;
+}
+.customerselect{
+  position: absolute;
+  width: 200px;
+  height: 500px;
+}
+.chatbox{
+  border: 2px solid #068B2E;
+  border-radius: 10px;
+  position: absolute;
+  height: 550px;
+  width: 400px;
+  background-color: #f9f9f9;
+
+}
+button[id=sendb]{
+  width: 70px;
+  height: 35px;
+  background-color: #068B2E;
+  color: #f9f9f9;
+  border-radius: 10px;
+  border-color: transparent;
+  font-family: "Poppins", sans-serif;
+}
+.send{
+  position: absolute;
+  width: 40px;
+  height: 30px;
+  top: 510px;
+  right: 40px;
+}
+.recievedtxt{
+  height: auto;
+  width: auto;
+  background-color: #f9f9f9;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid #7b7d7d;
+  font-family: "Poppins", sans-serif;
+}
+.recievedimg{
+  height: auto;
+  width: auto;
+  background-color: #f9f9f9;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid #7b7d7d;
+  font-family: "Poppins", sans-serif;
+}
+#prescriptionimgchat{
+  max-height: 400px;
+  max-width: 200px;
+}
+.senttxt{
+  height: auto;
+  width: auto;
+  background-color: #068B2E;
+  color: #f9f9f9;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif;
+}
+/*End of Pharmacy Chat*/
+
+/*Pharmacy Settings*/
+input[id=changePharmacyName],[id=changeOwnerName],[id=changeContactNo],[id=currentPassword],[id=newPassword],[id=confirmPassword]{
+  width: 400px;
+  height: 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  border: 2px solid #068b2e;
+}
+input[id=changePharmacyNameB],[id=changeOwnerNameB],[id=changeContactNoB],[id=changePasswordB]{
+  position: absolute;
+  margin-top: 5px;
+  left: 160px;
+  width: 80px;
+  height: 30px;
+  font-size: 12pt;
+  color: #f9f9f9;
+  border: #068B2E;
+  border-radius: 10px;
+  background-color: #068B2E;
+}
+.formcontainer{
+  position: absolute;
+  width: 450px;
+  left: 450px;
+  top: 150px;
+}
+input[id=dltb]{
+  width: 16px;
+  height: 16px;
+  margin-left: 40px;
+}
+input[id=addbt]{
+  width: 56px;
+  height: 56px;
+}
+.addphar{
+  position: absolute;
+  margin-top: 40px;
+}
+/*End of Pharmacy settings*/
+/*Tech Help*/
+.techhelpcontainer{
+  position: absolute;
+  width: 450px;
+  left: 350px;
+  top: 120px;
+}
+
+/*End of Tech Help*/
+/*Inventory*/
+.dashboardCardContainer {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: 10px;
+  top: 100px;
+  text-align:justify;
+
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+}
+#card5 {
+  top: -50px;
+  left: 0px;
+}
+#card6 {
+  top: -50px;
+  left: 250px;
+}
+.MedicinesGroceriescartIcon,
+.ShortagescardIcon {
+  position: relative;
+  left: 60px;
+  width: 60px;
+  height: 60px;
+  top: 30px;
+}
+.heading3{
+  position: relative;
+  text-align: center;
+  top: 80px;
+}
+.heading5{
+  position: relative;
+  text-align: center;
+  top: 90px;
+}
+#heading3 {
+  position: relative;
+  text-align: center;
+  top: 32px;
+}
+#heading5 {
+  position: relative;
+  text-align: center;
+  top: 40px;
+
+}
+#heading6 {
+  position: relative;
+  text-align: center;
+  top: 50px;
+
+}
+/*End of inventory*/
+/*List of Med*/
+menu-items{
+
+  width: 250px;
+}
+
+
+.menu-container{
+  height:25px;
+  width: 241px;
+  margin-left: 30px;
+}
+
+.menu-item{
+  margin-bottom: 15.05px;
+  margin-left: 15px;
+  margin-right: 10px;
+}
+
+.menu-item-i{
+  padding-top: 5px;
+  padding-left: 15px;
+  padding-bottom: 5px;
+  margin-bottom: 15.05px;
+  margin-right: 10px;
+  background: rgba(6, 139, 46, 0.9);
+  border-radius: 15px;
+
+}
+.item-des{
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  align-items: center;
+  color: #1E1E1E;
+
+}
+.header {
+  height: 60px;
+  background: #F9F9F9;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  left: 290px;
+  top: 0;
+  right: 0;
+
+}
+
+.middle-section{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1 ;
+  margin-left: 70px;
+  margin-right: 35px;
+  max-width: 500px;
+
+}
+
+.right-section{
+
+  width: 180px;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  justify-content:right;
+  flex-shrink: 0;
+
+}
+
+.des-panel{
+  position: absolute;
+  top: 80px;
+  left: 350px;
+  width: 600px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+  color: #1c1d1e80;
+
+}
+
+.des-panel2{
+  position: absolute;
+  top:111px;
+  left: 350px;
+  width: 600px;
+  font-family: 'Poppins', sans-serif;
+  font-style:normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+
+}
+.add-item-btn{
+  position: absolute;
+  top:80px;
+  left: 1200px;
+  width: 150px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  background-color:  #068B2E;
+  color: white;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: none;
+}
+
+.bar{
+  flex:1;
+  height: 35px;
+  padding-left: 10px;
+  font-size: 12px;
+  font-family:'Poppins', sans-serif;
+  color: rgba(29, 36, 46, 0.5);
+  border: 2px solid #068B2E;
+  border-radius: 8px;
+  width: 10px;
+
+}
+.table-container{
+  position: absolute;
+  top:200px;
+  left: 350px;
+
+}
+table {
+  width: 1000px;
+  display:block;
+  text-align: center;
+  border: 2px solid black;
+  margin-top: 30px;
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+}
+thead th, tbody td{
+  width: 200px;
+  padding: 10px;
+}
+thead {
+  display: inline-block;
+  width: 100%;
+  background-color: #83ff9a;
+  border-bottom: 2px solid black;
+
+}
+tbody {
+  height: 350px;
+  display: inline-block;
+  width: 100%;
+  overflow: auto;
+
+}
+
+td a{
+  text-decoration: none;
+  color: #3e3c3cd1;
+  display: flex;
+  gap: 1px;
+  align-items: center;
+}
+/*End of list of Med*/
+/*Med Details*/
+*{
+
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body{
+  height: 100vh;
+  overflow: hidden;
+}
+.logo{
+  padding-left: 13px;
+  margin-right: 67px;
+  margin-top: 5px;
+
+}
+
+
+
+
+.user-name{
+  margin-right:30px;
+}
+
+.user-img{
+  height: 25px;
+  width:50px;
+  height:50px;
+  border: none;
+  margin-right:20px;
+}
+
+
+.drop-down{
+  margin-left: 80px;
+  margin-right: 10px;
+  vertical-align: middle;
+  display: inline;
+
+}
+
+.notifications.img{
+  height: 25px;
+
+}
+
+.side-bar{
+  height: 100vh;
+
+}
+
+.menu-items{
+
+  width: 250px;
+}
+
+
+.menu-container{
+  height:25px;
+  width: 241px;
+  margin-left: 30px;
+}
+
+.menu-item{
+  margin-bottom: 15.05px;
+  margin-left: 15px;
+  margin-right: 10px;
+}
+
+.menu-item-i{
+  padding-top: 5px;
+  padding-left: 15px;
+  padding-bottom: 5px;
+  margin-bottom: 15.05px;
+  margin-right: 10px;
+  background: rgba(6, 139, 46, 0.9);
+  border-radius: 15px;
+
+}
+.item-des{
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  align-items: center;
+  color: #1E1E1E;
+
+}
+
+.footer{
+
+  background: #068B2E;
+  position: absolute;
+  left: 0;
+  width: 290px;
+  bottom: 0;
+}
+.footer-image{
+  display: inline;
+  vertical-align: middle;
+  margin-top: 10px;
+  margin-left: 110px;
+  margin-bottom: 10px;
+
+
+}
+
+.bg-pic{
+  object-fit:cover;
+  position: relative;
+
+
+}
+.header {
+  height: 60px;
+  background: #F9F9F9;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  left: 290px;
+  top: 0;
+  right: 0;
+
+}
+
+.middle-section{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1 ;
+  margin-left: 70px;
+  margin-right: 35px;
+  max-width: 500px;
+
+}
+
+.right-section{
+
+  width: 180px;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  justify-content:right;
+  flex-shrink: 0;
+
+}
+
+.arrow-btn{
+  display: inline-block;
+  margin-left: 10px;
+  align-self: center;
+  margin-bottom: 2px;
+
+
+}
+
+.bar{
+  flex:1;
+  height: 35px;
+  padding-left: 10px;
+  font-size: 12px;
+  font-family: 'Poppins', sans-serif;
+  color: rgba(29, 36, 46, 0.5);
+  border: 2px solid #068B2E;
+  border-radius: 8px;
+  width: 10px;
+
+}
+
+
+.inventory-search-container{
+
+  margin-left: 350px;
+
+  padding-left: 10px;
+
+  color: rgba(29, 36, 46, 0.5);
+  border: 2px solid #068B2E;
+  border-radius: 8px;
+
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 38px;
+  width: 366.0218811035156px;
+
+  top: 155px;
+  border-radius: 8px;
+
+}
+
+.Inventory-search{
+  font-size: 12px;
+  font-family:'Poppins', sans-serif;
+  width: 90%;
+  height: 30px;
+  border: none;
+
+
+}
+.Inventory-search:focus{
+  outline: none;
+}
+
+.search-icon{
+  width: 18px;
+  margin-top: 5px;
+}
+
+
+.inventory-search-container{
+  position: absolute;
+  top:160px;
+  left: 32px;
+  height: 35px;
+  padding-left: 10px;
+  background-color: white;
+  color: rgba(29, 36, 46, 0.5);
+  border: 2px solid #068B2E;
+  border-radius: 8px;
+  width: 20rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.Inventory-search{
+  font-size: 12px;
+  font-family:'Poppins', sans-serif;
+  width: 90%;
+  height: 30px;
+  border: none;
+
+
+}
+.Inventory-search:focus{
+  outline: none;
+}
+
+
+/* content */
+
+.content{
+  font-family:'Poppins', sans-serif;
+  width: 858px;
+  position: absolute;
+  top:230px;
+  left: 350px;
+  box-sizing: border-box;
+}
+
+.med-and-Inven{
+  width: 100%;
+  height: 126.49px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.medilice,.inventory{
+  border: 0.903509px solid rgba(29, 36, 46, 0.3);
+  border-radius: 10px;
+  width: 412px;
+  height: 100%;
+  background-color: white;
+}
+.m-i-heading, .How-to-use h3, .side-effects h3 {
+  font-weight: 600;
+  font-size: 14.4561px;
+  line-height: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom:0.903509px solid rgba(29, 36, 46, 0.3);
+}
+
+.m-id-container{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.m-id-container p {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12.6491px;
+  line-height: 20px;
+  margin-top: 2px;
+
+
+  color: #1D242E;
+}
+
+.m-id-container h3{
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  /* identical to box height, or 110% */
+
+
+  color: #1D242E;
+}
+
+.pen-icon{
+  width: 14px;
+  height: 14px;
+}
+
+
+.How-to-use , .side-effects{
+  border: 0.903509px solid rgba(29, 36, 46, 0.3);
+  border-radius: 10px;
+  background-color: white;
+  width: 100%;
+  margin-top:30px;
+
+}
+
+.How-to-use{
+  height: 99.07px;
+}
+
+
+
+.How-to-use p , .side-effects p{
+  padding: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12.7246px;
+  line-height: 20px;
+  /* identical to box height, or 157% */
+
+
+  color: #1D242E;
+}
+
+.delete-m-btn{
+  margin-top: 40px;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22px;
+  /* identical to box height */
+  background: #FFFFFF;
+  border: 0.4px solid #F0483E;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding: 10px;
+  color: #F0483E;
+  display: flex;
+  align-items: center;
+  gap :2px;
+}
+
+.delete-icon{
+  width: 16px;
+  height: 16px;
+}
+
+.medicineTextAreaContainer {
+  position: absolute;
+  width: 394.76px;
+  height: 67.91px;
+  left: 354px;
+  top: 159px;
+  font-family: "Poppins", sans-serif;
+}
+.medicineTextAreaContainer2 {
+  position: absolute;
+  width: 424.87px;
+  height: 67.91px;
+  left: 747.48px;
+  top: 159px;
+}
+.medicineTextAreaContainer3 {
+  position: absolute;
+  width: 394.76px;
+  height: 67.91px;
+  left: 354px;
+  top: 230px;
+}
+.medicineTextAreaContainer4 {
+  position: absolute;
+  width: 818.35px;
+  height: 130.44px;
+  left: 354px;
+  top: 306.17px;
+}
+.medicineTextAreaContainer5 {
+  position: absolute;
+  width: 818.35px;
+  height: 130.44px;
+  left: 354px;
+  top: 423.78px;
+}
+#medicineTextAreaContainer,
+#medicineTextAreaContainer2,
+#medicineTextAreaContainer3 {
+  width: 385.76px;
+  height: 30.91px;
+  font-family: "Poppins", sans-serif;
+}
+#medicineTextAreaContainer4,
+#medicineTextAreaContainer5 {
+  width: 775.35px;
+  height: 70.44px;
+  font-family: "Poppins", sans-serif;
+}
+.addNewMedicineBtn {
+  position: absolute;
+  width: 174.64px;
+  height: 49.59px;
+  left: 354px;
+  top: 535px;
+
+  background: #f0483e;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border-color: #f0483e;
+  font-family: "Poppins", sans-serif;
+}
+#medicineTextAreaContainer,
+#medicineTextAreaContainer2,
+#medicineTextAreaContainer3,
+#medicineTextAreaContainer4,
+#medicineTextAreaContainer5 {
+  background: #ffffff;
+  border: 2px solid #068b2e;
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif;
+}
+.medicinetextAreaUpper,
+.medicinetextArea2Upper,
+.medicinetextArea3Upper,
+.medicinetextArea4Upper,
+.medicinetextArea5Upper {
+  font-family: "Poppins", sans-serif;
+}
+.prescriptionTableHolder {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 831px;
+  height: 436px;
+  left: 316px;
+  top: 117px;
+
+  background: #ffffff;
+  border: 1px solid #000000;
+
+  /* border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd; */
+}
+.prescriptionTable {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+  /* style="overflow-Y:auto;" */
+  scroll-behavior: auto;
+
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  /* identical to box height, or 157% */
+
+  color: #1d242e;
+}
+
+#prescriptionTd {
+  text-align: left;
+  padding: 8px;
+}
+th {
+  background: #83ff9a;
+  /* position: fixed; */
+}
+
+
+.customerName {
+  position: absolute;
+  width: 474px;
+  height: 22px;
+  left: 15px;
+  top: 10px;
+
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  /* identical to box height, or 138% */
+
+  color: #1d242e;
+}
+.orderType {
+  position: absolute;
+  width: 474px;
+  height: 22px;
+  left: 15px;
+  top: 40px;
+
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+}
+.orderDate {
+  position: absolute;
+  width: 474px;
+  height: 22px;
+  left: 15px;
+  top: 80px;
+
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+}
+.pharmacyName {
+  position: absolute;
+  width: 474px;
+  height: 22px;
+  left: 15px;
+  top: 120px;
+
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+}
+.pharmacyId {
+  position: absolute;
+  width: 474px;
+  height: 22px;
+  left: 15px;
+  top: 160px;
+
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+}
+.availableMedicinesLeft {
+  position: absolute;
+  width: 474px;
+  height: 22px;
+  left: 15px;
+  top: 200px;
+
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+}
+.formMedicine {
+  height: 80px;
+  width: 124px;
+}
+.availableMedicinesRight {
+  position: absolute;
+  width: 124px;
+  height: 22px;
+  left: 314px;
+  top: 200px;
+
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  /* identical to box height, or 138% */
+
+  color: #1d242e;
+}
+.orderPrice {
+  position: absolute;
+  width: 94px;
+  height: 22px;
+  left: 15px;
+  top: 300px;
+
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  /* identical to box height, or 138% */
+}
+.pharmacistName {
+  position: absolute;
+  width: 124px;
+  height: 22px;
+  left: 15px;
+  top: 330px;
+
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+}
+.readyToPickUp {
+  position: absolute;
+  width: 192px;
+  height: 36px;
+  left: 314px;
+  top: 360px;
+
+  background: #068b2e;
+  box-shadow: 0px 4px 4px #068b2e;
+  border-radius: 10px;
+  border: #068b2e;
+}
+/* newwwwwwwwwwwww */
+.readyOrder {
+  position: absolute;
+  width: 321px;
+  height: 42px;
+  /* left: 314px; */
+  /* top: 360px;  */
+  left: 0px;
+  bottom: 0px;
+
+  background: #068b2e;
+  box-shadow: 0px 4px 4px #068b2e;
+  /* border-radius: 10px; */
+  border: #068b2e;
+}
+
+.prescriptionImageContainer {
+  box-sizing: border-box;
+
+  position: absolute;
+  /* width: 274px;
+  height: 387px; */
+
+  width: 320px;
+  height: 420px;
+  left: 346px;
+  top: 137px;
+
+  background: #ffffff;
+  /* border: 2px solid #fdfffe; */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /* border-radius: 10px; */
+}
+#prescriptionImg {
+  /* width: 268px;*/
+  height: 380px;
+
+  width: 319px;
+  /* height: 413px; */
+}
+
+#prescriptionImg2 {
+  /* width: 268px;*/
+  /* height: 380px; */
+
+  width: 319px;
+  height: 420px;
+}
+.orderConfirmation {
+  position: absolute;
+  width: 336px;
+  height: 421px;
+  /* left: 639px; */
+  left: 740px;
+  top: 137px;
+
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /* border-radius: 10px; */
+}
+.prescriptionId {
+  position: absolute;
+  /* width: 192px;
+  height: 36px;*/
+  left: 44px;
+  top: 30px;
+  font-family: "Poppins", sans-serif;
+  /* font-size: 18px; */
+}
+.prescriptionIdData {
+  position: absolute;
+
+  left: 154px;
+
+  top: 30px;
+}
+.pharmacyCustomer {
+  position: absolute;
+
+  left: 44px;
+  top: 60px;
+}
+.pharmacyCustomerData {
+  position: absolute;
+  /* width: 192px;
+  height: 36px;*/
+  left: 154px;
+  top: 60px;
+}
+
+.date {
+  position: absolute;
+
+  left: 44px;
+  top: 90px;
+}
+.dateData {
+  position: absolute;
+
+  left: 154px;
+  top: 90px;
+}
+.status {
+  position: absolute;
+
+  left: 44px;
+  top: 120px;
+}
+.statusData {
+  position: absolute;
+
+  left: 154px;
+  top: 120px;
+}
+
+.remarks {
+  position: absolute;
+  /* width: 1522px; */
+  /* height: 36px;*/
+  left: 44px;
+  top: 150px;
+}
+.remarksData {
+  position: absolute;
+
+  left: 154px;
+  top: 150px;
+}
+.price {
+  position: absolute;
+  /* width: 1522px; */
+  /* height: 36px;*/
+  left: 44px;
+  top: 180px;
+}
+.priceData {
+  position: absolute;
+
+  left: 154px;
+  top: 180px;
+}
+.accOrder {
+  position: absolute;
+  width: 336px;
+  height: 40px;
+  /* left: 314px; */
+  /* top: 360px;  */
+  left: 0px;
+  bottom: 0px;
+
+  background: #068b2e;
+  box-shadow: 0px 4px 4px #068b2e;
+  /* border-radius: 10px; */
+  border: #068b2e;
+  font-family: "Poppins", sans-serif;
+}
+p {
+  font-size: 10px;
+}
+.dashboardCardContainer {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  /* left: 304px; */
+  top: 125px;
+
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+#card1 {
+  left: 330px;
+}
+#card2 {
+  left: 620px;
+}
+#card3 {
+  left: 910px;
+}
+#card4 {
+  left: 1200px;
+}
+
+#dashCardDown {
+  position: relative;
+  left: 60px;
+}
+.dashDiscription {
+  position: absolute;
+  /* width: 446.95px; */
+  /* height: 56px; */
+  left: 326px;
+  top: 70px;
+
+  /* background-color: aquamarine; */
+}
+.invDiscription{
+  position: absolute;
+  /* width: 446.95px; */
+  /* height: 56px; */
+  left: 326px;
+  top: 60px;
+}
+.settDiscription{
+  position: absolute;
+  /* width: 446.95px; */
+  /* height: 56px; */
+  left: 326px;
+  top: 60px;
+}
+.techDiscription{
+  position: absolute;
+  /* width: 446.95px; */
+  /* height: 56px; */
+  left: 326px;
+  top: 60px;
+}
+.statusCardContainer {
+  position: absolute;
+  width: 423px;
+  height: 120px;
+  left: 317px;
+  top: 346px;
+
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+#statusCard2 {
+  left: 770px;
+  top: 426px;
+}
+#statusCard3 {
+  left: 317px;
+  top: 496px;
+}
+.statusCardHeader {
+  position: relative;
+  padding-bottom: 5px;
+  left: 5px;
+  top: 5px;
+}
+.statusCardLeftSideUp {
+  position: relative;
+  left: 35px;
+  top: 5px;
+}
+.statusCardLeftSideDown {
+  position: relative;
+  left: 5px;
+  top: 20px;
+  /* bottom: 5px; */
+}
+.statusCardRightSideUp {
+  position: relative;
+  left: 280px;
+  /* top: 1px; */
+  bottom: 30px;
+}
+.statusCardRightSideDown {
+  position: relative;
+  left: 250px;
+  /* top: 20px; */
+  bottom: 17px;
+}
+#cardCountRightSideDown {
+  bottom: 3px;
+  position: relative;
+  left: 250px;
+}
+.cartIcon,
+.medicineCountIcon,
+.medicineIcon,
+.customerIcon {
+  position: relative;
+  left: 90px;
+
+  /* position:fixed; */
+
+  width: 60px;
+  height: 60px;
+  top: 60px;
+
+  /* background: url(wepik-photo-mode-2022930-151144.png); */
+}

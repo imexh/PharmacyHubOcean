@@ -1,22 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
     <title>Contact Us</title>
+    <link rel="stylesheet" href="style/contactus.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2? family=Poppins:wght@100;200;300;400;600;700&display+swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
 </head>
-<body>
-<a href="/aboutus">
-    <button>About Us</button>
-</a>
-<a href="/contactus">
-    <button>Contact Us</button>
-</a>
-<a href="/login">
-    <button>Login</button>
-</a>
-<a href="/signup">
-    <button>Signup</button>
-</a>
- <h1>Contact Us</h1>
+<body background="images/contactUs/Background1.png">
+<section class="header">
+    <nav>
+        <a href="/index"><img src="images/loginSignup/Logo2.png" ></a>
+        <div class="Links">
+            <ul>
+                <li><a href="/aboutus">About Us</a></li>
+                <li><a href="/contactus">Contact Us</a></li>
+                <li><a href="/login">Log in</a></li>
+                <ul class="dropmenu2">
+                    <li><a href="#"><i class="fa fa-user-circle-o" aria-hidden="true">Log in as Admin</i></a></li>
+                    <li><a href="#"><i class="fa fa-user-circle-o" aria-hidden="true">Log in as Pharmacist</i></a></li>
+                </ul>
+                <li><a href="/signup">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="text-box">
+        <h1>Contact Us</h1>
+        <p>If you have any issues, suggestions or inquaries, <br> contact us through below details.</p>
+    </div>
+
+    <img src="images/contactUs/ConDetails.png" id="contimg" alt="Contact">
+</section>
 </body>
 </html>

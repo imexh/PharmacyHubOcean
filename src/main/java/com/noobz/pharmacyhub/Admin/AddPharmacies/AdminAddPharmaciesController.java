@@ -48,7 +48,7 @@ public class AdminAddPharmaciesController {
             account.setAll(addPharmaciesForm.getRegistrationId(), addPharmaciesForm.getPharmacyName(),
                     addPharmaciesForm.getContactNo(), addPharmaciesForm.getOwnerName(),
                     addPharmaciesForm.getProvince(), addPharmaciesForm.getDistrict(),
-                    addPharmaciesForm.getCity(), security.encryptPassword(addPharmaciesForm.getPassword()));
+                    addPharmaciesForm.getCity(), security.encryptPassword(addPharmaciesForm.getPassword()), addPharmaciesForm.getImageUrl());
 
             adminAddPharmaciesService.saveAccountDetails(account);
 

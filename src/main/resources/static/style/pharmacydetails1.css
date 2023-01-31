@@ -1,0 +1,204 @@
+body{
+    background-image: url(/images/loginSignup/PharmacyBG1Op12.png);
+  }
+  .topcontainer{
+    float: right;
+    height: 100px;
+    width: 70%;
+  }
+  input[id=logo]{
+    float: left;
+    height: 32px;
+    width: auto;
+    margin-top: 18px;
+    margin-left: 20px;
+  }
+  input[id=proficon]{
+    float: right;
+    height: 32px;
+    width: 32px;
+    padding: 18px;
+  }
+  input[id=topsrch]{
+    float: left;
+    margin-top: 10px;
+    margin-left: 10%;
+    height: 30px;
+    width: 400px;
+    border-radius: 10px;
+    border: 2px solid #068B2E;
+  }
+  .sidecontainer{
+    float: left;
+    width: 250px;
+    height: 690px;
+    border: 2px solid #f9f9f9;
+    background-color: #f9f9f9;
+    margin: 0px;
+  }
+  .sidebottom{
+    float: left;
+    width: 250px;
+    height: 60px;
+    border: 1px solid #068B2E;
+    background-color: #068B2E;
+    margin-top: 200px;
+  }
+  input[id=nbs]{
+    float: left;
+    width: 100px;
+    height: auto;
+    margin-top: 10px;
+    margin-left: 70px;
+  }
+  .sidebuttons{
+    float: left;
+    width: auto;
+    height: auto;
+    margin-top: 100px;
+    margin-left: 20px;
+  }
+  button[id=dash],[id=phar],[id=cust],[id=med],[id=ads],[id=sett],[id=tec],[id=lgout] {
+    width: 200px;
+    height: 30px;
+    align-self: auto;
+    margin-top: 5px;
+    font-size: 12pt;
+    border-radius: 10px;
+    border: 1px transparent;
+    background-color: transparent;
+  }
+  button[id=phar]{
+    background-color: #068B2E;
+    color: #f9f9f9;
+  }
+  .tablecontainer{
+    float: left;
+    width: 450px;
+    margin-left: 200px;
+  }
+  table[id=phar1]{
+    float: left;
+    width: 400px;
+    height: 60px;
+  }
+  .table1{
+    float: left;
+    width: 420px;
+    height: 80px;
+    padding-top: 5px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border: 2px solid #068b2e;
+  }
+  button[id=addph]{
+    width: 150px;
+    height: 30px;
+    margin: 5px;
+    margin-top: 100px;
+    color: #f9f9ff;
+    border: #068b2e;
+    background-color: #068b2e;
+    border-radius: 10px;
+  }
+  input[id=dltb]{
+    width: 16px;
+    height: 16px;
+    margin-left: 40px;
+  }
+  input[id=addbt]{
+    width: 56px;
+    height: 56px;
+  }
+  .addphar{
+    float: right;
+    margin-top: 40px;
+  }
+  table {
+        border-spacing: 1;
+        border-collapse: collapse;
+        background: rgb(235, 235, 235);
+        border-radius: 6px;
+        overflow: hidden;
+        max-width: 800px;
+        width: 800px;
+        margin-bottom: 40px;
+        margin-left:auto;
+        margin-right:auto;
+        position: relative;
+      }
+      table * {
+        position: relative;
+      }
+      table td, table th {
+        padding-left: 8px;
+      }
+      table thead tr {
+        height: 60px;
+        background: #83ff9a;
+        font-size: 16px;
+      }
+      table tbody tr {
+        height: 48px;
+        border-bottom: 1px solid #E3F1D5;
+      }
+      table tbody tr:last-child {
+        border: 0;
+      }
+      table td, table th {
+        text-align: left;
+      }
+      table td.l, table th.l {
+        text-align: right;
+      }
+      table td.c, table th.c {
+        text-align: center;
+      }
+      table td.r, table th.r {
+        text-align: center;
+      }
+
+      @media screen and (max-width: 35.5em) {
+        table {
+          display: block;
+        }
+        table > *, table tr, table td, table th {
+          display: block;
+        }
+        table thead {
+          display: none;
+        }
+        table tbody tr {
+          height: auto;
+          padding: 8px 0;
+        }
+        table tbody tr td {
+          padding-left: 45%;
+          margin-bottom: 12px;
+        }
+        table tbody tr td:last-child {
+          margin-bottom: 0;
+        }
+        table tbody tr td:before {
+          position: absolute;
+          font-weight: 700;
+          width: 70%;
+          left: 10px;
+          top: 0;
+        }
+        table tbody tr td:nth-child(1):before {
+          content: "Code";
+        }
+        table tbody tr td:nth-child(2):before {
+          content: "Stock";
+        }
+        table tbody tr td:nth-child(3):before {
+          content: "Cap";
+        }
+        table tbody tr td:nth-child(4):before {
+          content: "Inch";
+        }
+        table tbody tr td:nth-child(5):before {
+          content: "Box Type";
+        }
+      }

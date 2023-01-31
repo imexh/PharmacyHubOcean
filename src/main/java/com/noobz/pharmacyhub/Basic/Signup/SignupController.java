@@ -45,7 +45,7 @@ public class SignupController {
             account.setAll(signupForm.getRegistrationId(), signupForm.getPharmacyName(),
                     signupForm.getContactNo(), signupForm.getOwnerName(),
                     signupForm.getProvince(), signupForm.getDistrict(),
-                    signupForm.getCity(), security.encryptPassword(signupForm.getPassword()));
+                    signupForm.getCity(), security.encryptPassword(signupForm.getPassword()), signupForm.getImageUrl());
 
             signupService.saveAccountDetails(account);
 

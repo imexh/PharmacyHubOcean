@@ -4,101 +4,417 @@
   <meta charset="UTF-8">
   <title>Add Advertisement</title>
 </head>
-<style>
-  body{
-    background-image: url(/images/loginSignup/PharmacyBG1Op12.png);
-  }
-  .topcontainer{
-    float: right;
-    height: 100px;
-    width: 70%;
-  }
-  input[id=logo]{
-    float: left;
-    height: 32px;
-    width: auto;
-    margin-top: 18px;
-    margin-left: 20px;
-  }
-  input[id=proficon]{
-    float: right;
-    height: 32px;
-    width: 32px;
-    padding: 18px;
-  }
-  .sidecontainer{
-    float: left;
-    width: 250px;
-    height: 690px;
-    border: 2px solid #f9f9f9;
-    background-color: #f9f9f9;
-    margin: 0px;
-  }
-  .sidebottom{
-    float: left;
-    width: 250px;
-    height: 60px;
-    border: 1px solid #068B2E;
-    background-color: #068B2E;
-    margin-top: 200px;
-  }
-  input[id=nbs]{
-    float: left;
-    width: 100px;
-    height: auto;
-    margin-top: 10px;
-    margin-left: 70px;
 
-  }
-  .sidebuttons{
+<style>
+
+body
+ {
+  /* font-family: p; */
+  font-family: "Poppins" sans-serif;
+}
+.navBarContainer {
+  position: absolute;
+  /* width: 1142px; */
+  width: 80.9%;
+
+  height: 59px;
+  left: 290px;
+  top: 0px;
+
+  background-color: #fbf6f6;
+}
+.sideBarContainer {
+  background-color: #f2f2f2;
+  /* position: absolute; */
+  position: fixed;
+  width: 291px;
+  /* height: 600px; */
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  /* bottom: 60px; */
+  /* z-index: 100; */
+  /* /padding: 1.5em;  */
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none
+}
+
+
+.logoIcon {
+  position: absolute;
+  width: 210px;
+  height: 62px;
+  left: 13px;
+  top: 5px;
+  opacity: 100%;
+}
+.sideBarButtonContainer {
+  position: absolute;
+  left: 5.21%;
+  right: 88.06%;
+  top: 5px;
+  bottom: 79.81%;
+
+  font-family: "Poppins" sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+
+  /* color: #161414; */
+}
+.dashboardButton {
+  position: absolute;
+  width: 241px;
+  height: 31px;
+  /* left: 18px; */
+  left: 18px;
+  top: 110px;
+  /* background-color: aqua; */
+  border: #fbf6f6;
+}
+
+.pharmacyButton {
+  /* background-color: aqua; */
+
+  position: absolute;
+  width: 241px;
+  height: 31px;
+  left: 18px;
+  top: 145px;
+  border: #fbf6f6;
+}
+.CustomersButton {
+  /* background-color: aqua; */
+
+  position: absolute;
+  width: 241px;
+  height: 31px;
+  left: 18px;
+  top: 180px;
+  border: #fbf6f6;
+}
+.MedicinesGroceriesButton {
+  /* background-color: aqua; */
+
+  position: absolute;
+  width: 241px;
+  height: 31px;
+  left: 18px;
+  top: 215px;
+  border: #fbf6f6;
+}
+.AdsButton {
+  /* background-color: aqua; */
+
+  position: absolute;
+  width: 241px;
+  height: 31px;
+  left: 18px;
+  top: 250px;
+  border: #fbf6f6;
+}
+
+p {
+  font-size: 10px;
+}
+
+.dashDiscription {
+  position: absolute;
+  /* width: 446.95px; */
+  /* height: 56px; */
+  left: 326px;
+  top: 50px;
+  font-family: 'Poppins', sans-serif;
+
+  /* background-color: aquamarine; */
+}
+
+#userIcon {
+  position: absolute;
+  /* width: 40px;
+  height: 40px; */
+
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+  right: 70px;
+  top: 16px;
+
+  background: #f9fffd;
+
+  opacity: 100%;
+}
+#notification {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+
+  right: 10px;
+  top: 16px;
+
+  background: #f9fffd;
+  opacity: 100%;
+}
+.PharmaciescartIcon,
+.CustomerscartIcon,
+.MedicinesGroceriescartIcon,
+.AdscardIcon {
+  position: relative;
+  left: 90px;
+
+  /* position:fixed; */
+
+  width: 60px;
+  height: 60px;
+  top: 60px;
+  /* background: url(wepik-photo-mode-2022930-151144.png); */
+}
+
+.heading3{
+  position: relative;
+  text-align: center;
+  top: 60px;
+  font-family: "Poppins" sans-serif;
+}
+
+.heading5{
+  position: relative;
+  text-align: center;
+  top: 50px;}
+
+.footerTextContainer {
+  bottom: 5px;
+}
+footer {
+  /* position: absolute; */
+  position: fixed;
+  width: 290px;
+  height: 60px;
+  /* top: 600px; */
+  left: 0px;
+  /* top: 772px; */
+  bottom: 0px;
+  background-color: #068b2e;
+}
+.footerTextContainer {
+  font-size: small;
+  color: aliceblue;
+  position: relative;
+  left: 100px;
+  top: 10px;
+  font-family: "Poppins" sans-serif;
+}
+#footerUp {
+  font-size: 10px;
+}
+
+#dashboardButtonIcon,
+#pharmacyButtonIcon,
+#CustomersButtonIcon,
+#MedicinesGroceriesButtonIcon,
+#AdsButtonIcon {
+  position: absolute;
+
+  left: 8px;
+
+  top: 1px;
+
+  /* background-color: #edeaea; */
+
+  width: 24px;
+  height: 24px;
+}
+
+.dashboardButton,
+.pharmacyButton,
+.CustomersButton,
+.MedicinesGroceriesButton,
+.AdsButton {
+  border-radius: 15px;
+  /* text-align: left; */
+}
+
+.dashboardButton:hover {
+  background-color: #068b2e;
+  color: white;
+}
+.pharmacyButton:hover {
+  background-color: #068b2e;
+  color: white;
+}
+.CustomersButton:hover {
+  background-color: #068b2e;
+  color: white;
+}
+.MedicinesGroceriesButton:hover {
+  background-color: #068b2e;
+  color: white;
+}
+.AdsButton:hover {
+  background-color: #068b2e;
+  color: white;
+}
+
+/* testing drop down for notification */
+.dropbtn {
+  background-color: #f1f3f4;
+  color: rgb(250, 244, 244);
+  /* padding: 16px;
+  font-size: 16px; */
+  border: none;
+  cursor: pointer;
+
+  width: 35px;
+  height: 35px;
+
+  border-radius: 50%;
+
+  /* position: absolute; */
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+  /* background-color: #29b97d; */
+  background-color: #fff9f9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  left: 1000px;
+  top: 11px;
+}
+
+.dropdown-content {
+  display: none;
+  /* float: left; */
+  right: 0;
+  position: absolute;
+  background-color: #fff9f9;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(172, 156, 156, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: #068B2E(4, 172, 71);
+}
+
+.show {
+  display: block;
+}
+
+/* testing for notification */
+.dropbtnNotify {
+  background-color: #f1f3f4;
+  color: rgb(250, 244, 244);
+  /* padding: 16px;
+  font-size: 16px; */
+  border: none;
+  cursor: pointer;
+
+  width: 35px;
+  height: 35px;
+
+  border-radius: 50%;
+
+  /* position: absolute; */
+}
+
+.dropbtnNotify:hover,
+.dropbtnNotify:focus {
+  background-color: #f6fbf9;
+}
+
+.dropdownNotify {
+  position: relative;
+  display: inline-block;
+
+  left: 1020px;
+  top: 11px;
+}
+
+.dropdownNotify-content {
+  display: none;
+  /* float: left; */
+  right: 0;
+  position: absolute;
+  background-color: #fff9f9;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(172, 156, 156, 0.2);
+  z-index: 1;
+}
+
+.dropdownNotify-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdownNotify a:hover {
+  background-color: rgb(4, 172, 71);
+}
+
+.show {
+  display: block;
+}
+
+.tablecontainer{
     float: left;
-    width: auto;
-    height: auto;
-    margin-top: 100px;
-    margin-left: 20px;
+    width: 450px;
+    margin-left: 500px;
+    margin-top:-850px;
   }
-  .form{
+
+<!--th {-->
+<!--  background: #d9d9d9;-->
+<!--  /* position: fixed; */-->
+<!--}-->
+
+<!--tr:nth-child(even) {-->
+<!--  background-color: #f2f2f2;-->
+<!--}-->
+
+
+.form{
     float: left;
     width: 450px;
     height: 100%;
-    margin-left: 200px;
+    margin-left: 600px;
+    margin-top:-750px;
+    position: relative;
+    width: 500px;
+    height: 726px;
+    border-radius: 30px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #ecf0f3;
+    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
 
   }
-  button[id=dash],[id=phar],[id=cust],[id=med],[id=ads],[id=sett],[id=tec],[id=lgout] {
-    width: 200px;
-    height: 30px;
-    align-self: auto;
-    margin-top: 5px;
-    font-size: 12pt;
-    border-radius: 10px;
-    border: 1px transparent;
-    background-color: transparent;
-  }
-  button[id=ads]{
-    background-color: #068B2E;
-    color: #f9f9f9;
-  }
-  input[id=adTopic],[id=adId],[id=companyName],[id=details],[id=contact],[id=email],[id=companyAddress],[id=imageUrl]{
-    width: 400px;
-    height: 30px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border-radius: 10px;
-    border: 2px solid #068b2e;
-  }
-  select[id=province],[id=district],[id=city]{
-    width: 130px;
-    height: 40px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border-radius: 10px;
-    border: 2px solid #068B2E;
-  }
-  .selectprov,.selectdist,.selectcity{
-    float: left;
-    margin-right: 8px;
-  }
-  input[id=addb]{
+
+input[id=addb]{
     float: left;
     margin-top: 10px;
     margin-left: 150px;
@@ -110,116 +426,256 @@
     border-radius: 10px;
     background-color: #068B2E;
   }
-  input[id=topsrch]{
-    float: left;
-    margin-top: 10px;
-    margin-left: 10%;
-    height: 30px;
+
+input[id=adTopic],[id=adId],[id=companyName],[id=details],[id=contact],[id=email],[id=companyAddress],[id=imageUrl]{
     width: 400px;
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     border-radius: 10px;
-    border: 2px solid #068B2E;
-  }
-  .statbox{
-    float: left;
-    width: 150px;
-    height: 200px;
-    border-radius: 10px;
-    border: 2px solid #068B2E;
-    margin-left: 50px;
-    margin-top: 200px;
-
-  }
-  p[id=stattxt]{
-    float: left;
-    width: 100px;
-    height: auto;
-    padding-left: 55px;
-  }
-  p[id=succ]{
-    float: left;
-    width: 130px;
-    margin-top: 40px;
-    padding-left: 10px;
-  }
-  input[id=tick]{
-    float: left;
-    width: 64px;
-    height: 64px;
-    margin-top: 20px;
-    margin-left: 45px;
+    border: 2px solid #068b2e;
   }
 
 
-</style>
+  </style>
+
 <body>
-<div class="topcontainer">
-  <div class="topsearch">
-    <input id="topsrch" type="text" placeholder="Search for anything here.">
+
+
+<img
+        src="/images/index/Background.png"
+        class="background"
+        alt="Body Background Image"
+/>
+<div class="navBarContainer">
+
+  <!-- setting the clicable dropdown -->
+  <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">
+      <!-- <button onclick="myFunction()" id="userIcon"> -->
+      <!-- <img src="../images/profilePic.svg" id="userIcon" /> -->
+      <img src="/images/loginSignup/user.png" class="dropbtn" />
+    </button>
+    <div id="myDropdown" class="dropdown-content">
+<!--      <a href="">My Profile</a>-->
+      <a href="/logout">Logout</a>
+      <!-- <a href="">Contact</a> -->
+    </div>
   </div>
-  <input id="proficon" type="image" src="/images/loginSignup/user.png" alt="submit">
+
+  <script>
+        /* When the user clicks on the button,
+      toggle between hiding and showing the dropdown content */
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+          if (!event.target.matches(".dropbtn")) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains("show")) {
+                openDropdown.classList.remove("show");
+              }
+            }
+          }
+        };
+      </script>
+
+  <!-- testing for notification -->
+  <!-- testing for notification -->
+  <div class="dropdownNotify">
+    <button onclick="myFunctionNotify()" class="dropbtnNotify">
+      <!-- <button onclick="myFunction()" id="userIcon"> -->
+      <!-- <img src="../images/profilePic.svg" id="userIcon" /> -->
+      <img
+              src="/images/dashboard/notificationIcon.svg"
+              class="dropbtnNotify"
+      />
+    </button>
+    <div id="myDropdownNotify" class="dropdownNotify-content">
+      <a href="">Message received from Customer 01.</a>
+      <a href="">Customer 03 placed an order</a>
+      <a href="">Admin : New features added. Click here to check.</a>
+    </div>
+  </div>
+
+  <!-- end -->
+  <script>
+        /* When the user clicks on the button,
+  toggle between hiding and showing the dropdown content */
+        function myFunctionNotify() {
+          document.getElementById("myDropdownNotify").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+          if (!event.target.matches(".dropbtnNotify")) {
+            var dropdowns = document.getElementsByClassName(
+              "dropdownNotify-content"
+            );
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains("show")) {
+                openDropdown.classList.remove("show");
+              }
+            }
+          }
+        };
+      </script>
+
+
+  <div class="notification"></div>
 </div>
-<div class="sidecontainer">
-  <input id="logo" type="image" src="/images/loginSignup/logowtext.png">
-  <div class="sidebuttons">
+
+<!--<div class="dashDiscription">-->
+<!--    <h2>Dashboard</h2>-->
+<!--</div>-->
+
+<div class="sideBarContainer">
+  <img src="/images/dashboard/pharmacyLogo.svg" class="logoIcon" />
+
+  <div class="sideBarButtonContainer">
     <a href="/admin/dashboard">
-      <button id="dash">Dashboard</button>
-    </a><br>
-    <a href="/admin/viewpharmacies">
-      <button id="phar">Pharmacies</button>
-    </a><br>
-    <a href="/admin/removecustomers">
-      <button id="cust">Customers</button>
-    </a><br>
-    <a href="/admin/removemedicine">
-      <button id="med">Medicine & Groceries</button>
-    </a><br>
-    <a href="/admin/viewads">
-      <button id="ads">Ads</button>
-    </a><br>
-    <a href="/admin/settings">
-      <button id="sett">Application Settings</button>
-    </a><br>
-    <a href="/admin/technicalhelp">
-      <button id="tec">Get Technical help</button>
-    </a><br>
-    <a href="/logout">
-      <button id="lgout">Logout</button>
+      <button
+              onclick="document.location='../'"
+              class="dashboardButton">
+        Dashboard
+        <img
+                src="/images/dashboard/newDashboardIcon.svg"
+                id="dashboardButtonIcon"/>
+      </button>
     </a>
-  </div>
-  <div class="sidebottom">
-    <input id="nbs" type="image" src="/images/loginSignup/poweredbynbs.png">
+    <a href="/admin/viewpharmacies">
+      <button onclick="document.location='admiviewpharmacy.html'" class="pharmacyButton">
+        Pharmacy
+        <img
+                src="/images/dashboard/newpharmacy.svg"
+                id="pharmacyButtonIcon"/>
+      </button>
+    </a>
+
+    <a href="/admin/removecustomers">
+      <button onclick="document.location='adminremovecoustomer.html'" class="CustomersButton">
+        Customers
+        <img
+                src="/images/dashboard/custm.svg"
+                id="CustomersButtonIcon"/>
+      </button>
+    </a>
+
+    <a href="/admin/removemedicine">
+      <button
+              onclick="document.location='MedicinesGroceries.html'"
+              class="MedicinesGroceriesButton">
+        Medicines & Groceries
+        <img
+                src="/images/dashboard/medcart.svg"
+                id="MedicinesGroceriesButtonIcon"/>
+      </button>
+    </a>
+    <!-- <button class="prescriptionsButton"> -->
+
+    <a href="/admin/viewads">
+      <button
+              onclick="document.location='adminviewads.html'"
+              class="AdsButton">
+        Ads
+        <img
+                src="/images/dashboard/ads.svg"
+                id="AdsButtonIcon"/>
+      </button>
+    </a>
+
   </div>
 </div>
+
+
+<!--<div class="topcontainer">-->
+<!--  <div class="topsearch">-->
+<!--    <input id="topsrch" type="text" placeholder="Search for anything here.">-->
+<!--  </div>-->
+<!--  <input id="proficon" type="image" src="/images/loginSignup/user.png" alt="submit">-->
+<!--</div>-->
+<!--<div class="sidecontainer">-->
+<!--  <input id="logo" type="image" src="/images/loginSignup/logowtext.png">-->
+<!--  <div class="sidebuttons">-->
+<!--    <a href="/admin/dashboard">-->
+<!--      <button id="dash">Dashboard</button>-->
+<!--    </a><br>-->
+<!--    <a href="/admin/viewpharmacies">-->
+<!--      <button id="phar">Pharmacies</button>-->
+<!--    </a><br>-->
+<!--    <a href="/admin/removecustomers">-->
+<!--      <button id="cust">Customers</button>-->
+<!--    </a><br>-->
+<!--    <a href="/admin/removemedicine">-->
+<!--      <button id="med">Medicine & Groceries</button>-->
+<!--    </a><br>-->
+<!--    <a href="/admin/viewads">-->
+<!--      <button id="ads">Ads</button>-->
+<!--    </a><br>-->
+<!--    <a href="/admin/settings">-->
+<!--      <button id="sett">Application Settings</button>-->
+<!--    </a><br>-->
+<!--    <a href="/admin/technicalhelp">-->
+<!--      <button id="tec">Get Technical help</button>-->
+<!--    </a><br>-->
+<!--    <a href="/logout">-->
+<!--      <button id="lgout">Logout</button>-->
+<!--    </a>-->
+<!--  </div>-->
+<!--  <div class="sidebottom">-->
+<!--    <input id="nbs" type="image" src="/images/loginSignup/poweredbynbs.png">-->
+<!--  </div>-->
+<!--</div>-->
+
+
+
 <div class="form">
   <h1>Add Advertisement</h1>
   <br>
   <form action="#" th:action="@{/admin/addadvertisement}" th:object="${addDetails}" method="post">
     <label for="adTopic">Advertisement Topic:</label><br>
-    <input type="text" id="adTopic" name="adTopic" th:field="*{topic}"><br>
+    <input required type="text" id="adTopic" name="adTopic" th:field="*{topic}"><br>
 
     <label for="adId">Advertisement ID:</label><br>
-    <input type="text" id="adId" name="adId" th:field="*{id}"><br>
+    <input required type="text" id="adId" name="adId" th:field="*{id}"><br>
 
     <label for="companyName">Company Name:</label><br>
-    <input type="text" id="companyName" name="companyName" th:field="*{companyName}"><br>
+    <input required type="text" id="companyName" name="companyName" th:field="*{companyName}"><br>
 
     <label for="details">Details:</label><br>
-    <input type="text" id="details" name="details" th:field="*{details}"><br>
+    <input required type="text" id="details" name="details" th:field="*{details}"><br>
 
     <label for="contact">Contact:</label><br>
-    <input type="text" id="contact" name="contact" th:field="*{contact}"><br>
+    <input required type="text" id="contact" name="contact" th:field="*{contact}"><br>
 
     <label for="email">Email:</label><br>
-    <input type="text" id="email" name="email" th:field="*{email}"><br>
+    <input required type="text" id="email" name="email" th:field="*{email}"><br>
 
     <label for="companyAddress">Company Address:</label><br>
-    <input type="text" id="companyAddress" name="companyAddress" th:field="*{companyAddress}"><br>
+    <input required type="text" id="companyAddress" name="companyAddress" th:field="*{companyAddress}"><br>
 
     <label for="imageUrl">Image URL:</label><br>
-    <input type="text" id="imageUrl" name="imageUrl" th:field="*{imageUrl}"><br>
+    <input required type="text" id="imageUrl" name="imageUrl" th:field="*{imageUrl}"><br>
 
     <input id="addb" type="submit" value="Add">
   </form>
 </div>
+
+<footer>
+  <div class="footerTextContainer">
+    <div class="footerUp" id="footerUp">Powered by</div>
+    <div class="footerDown">
+      <b>Noobz69</b>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>

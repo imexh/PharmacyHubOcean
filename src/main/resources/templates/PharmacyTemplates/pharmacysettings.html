@@ -3,198 +3,243 @@
 <head>
   <meta charset="UTF-8">
   <title>Settings</title>
+
 </head>
-<style>
-  body{
-    background-image: url(/images/loginSignup/PharmacyBG1Op12.png);
-  }
-  .topcontainer{
-    float: right;
-    height: 100px;
-    width: 70%;
-  }
-  input[id=logo]{
-    float: left;
-    height: 32px;
-    width: auto;
-    margin-top: 18px;
-    margin-left: 20px;
-  }
-  input[id=proficon]{
-    float: right;
-    height: 32px;
-    width: 32px;
-    padding: 18px;
-  }
-  input[id=topsrch]{
-    float: left;
-    margin-top: 10px;
-    margin-left: 10%;
-    height: 30px;
-    width: 400px;
-    border-radius: 10px;
-    border: 2px solid #068B2E;
-  }
-  .sidecontainer{
-    float: left;
-    width: 250px;
-    height: 630px;
-    border: 2px solid #f9f9f9;
-    background-color: #f9f9f9;
-    margin: 0px;
-  }
-  .sidebottom{
-    float: left;
-    width: 250px;
-    height: 60px;
-    border: 1px solid #068B2E;
-    background-color: #068B2E;
-    margin-top: 160px;
-  }
-  input[id=nbs]{
-    float: left;
-    width: 100px;
-    height: auto;
-    margin-top: 10px;
-    margin-left: 70px;
-  }
-  .sidebuttons{
-    float: left;
-    width: auto;
-    height: auto;
-    margin-top: 100px;
-    margin-left: 20px;
-  }
-  button[id=dash],[id=phar],[id=inv],[id=chat],[id=pres],[id=orders],[id=sett],[id=tec],[id=lgout] {
-    width: 200px;
-    height: 30px;
-    align-self: auto;
-    margin-top: 5px;
-    font-size: 12pt;
-    border-radius: 10px;
-    border: 1px transparent;
-    background-color: transparent;
-  }
-  button[id=sett]{
-    background-color: #068B2E;
-    color: #f9f9f9;
-  }
-  input[id=changePharmacyName],[id=changeOwnerName],[id=changeContactNo],[id=currentPassword],[id=newPassword],[id=confirmPassword]{
-    width: 400px;
-    height: 30px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border-radius: 10px;
-    border: 2px solid #068b2e;
-  }
-  input[id=changePharmacyNameB],[id=changeOwnerNameB],[id=changeContactNoB],[id=changePasswordB]{
-    float: left;
-    margin-top: 5px;
-    margin-left: 160px;
-    width: 80px;
-    height: 30px;
-    font-size: 12pt;
-    color: #f9f9f9;
-    border: #068B2E;
-    border-radius: 10px;
-    background-color: #068B2E;
-  }
-  .formcontainer{
-    float: left;
-    width: 450px;
-    margin-left: 200px;
-  }
-  input[id=dltb]{
-    width: 16px;
-    height: 16px;
-    margin-left: 40px;
-  }
-  input[id=addbt]{
-    width: 56px;
-    height: 56px;
-  }
-  .addphar{
-    float: right;
-    margin-top: 40px;
-  }
 
-</style>
+<link rel="stylesheet" href="/style/pharmacySetting.css">
 <body>
-<div class="topcontainer">
-  <div class="topsearch">
-    <input id="topsrch" type="text" placeholder="Search for anything here.">
+<img
+        src="/images/dashboard/PharmacyBG1.png"
+        class="background"
+        alt="Body Background Image"
+/>
+
+<div class="navBarContainer">
+
+  <!-- setting the clicable dropdown -->
+  <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">
+      <!-- <button onclick="myFunction()" id="userIcon"> -->
+      <!-- <img src="../images/profilePic.svg" id="userIcon" /> -->
+      <img src="/images/dashboard/profilePic.svg" class="dropbtn" />
+    </button>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="/pharmacy/viewpharmacy">My Profile</a>
+      <a href="/logout">Logout</a>
+      <!-- <a href="">Contact</a> -->
+    </div>
   </div>
-  <input id="proficon" type="image" src="/images/loginSignup/user.png" alt="submit">
-</div>
-<div class="sidecontainer">
-  <input id="logo" type="image" src="/images/loginSignup/logowtext.png">
-  <div class="sidebuttons">
-    <a href="/pharmacy/dashboard">
-      <button id="dash">Dashboard</button>
-    </a><br>
-    <a href="/pharmacy/viewinventory">
-      <button id="inv">Inventory</button>
-    </a><br>
-    <a href="/pharmacy/viewpharmacy">
-      <button id="phar">Pharmacy</button>
-    </a><br>
-    <a href="/pharmacy/viewprescriptions">
-      <button id="pres">Prescriptions</button>
-    </a><br>
-    <a href="/pharmacy/vieworders">
-      <button id="orders">Orders</button>
-    </a><br>
-<!--    <a href="/pharmacy/chat">-->
-<!--      <button id="chat">Chat with Customers</button>-->
-<!--    </a><br>-->
-    <a href="/pharmacy/settings">
-      <button id="sett">Settings</button>
-    </a><br>
-    <a href="/pharmacy/technicalhelp">
-      <button id="tec">Get Technical help</button>
-    </a><br>
-    <a href="/logout">
-      <button id="lgout">Logout</button>
-    </a>
+
+  <script>
+    /* When the user clicks on the button,
+  toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+      if (!event.target.matches(".dropbtn")) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains("show")) {
+            openDropdown.classList.remove("show");
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- testing for notification -->
+  <!-- testing for notification -->
+  <div class="dropdownNotify">
+    <button onclick="myFunctionNotify()" class="dropbtnNotify">
+      <!-- <button onclick="myFunction()" id="userIcon"> -->
+      <!-- <img src="../images/profilePic.svg" id="userIcon" /> -->
+      <img
+              src="/images/dashboard/notificationIcon.svg"
+              class="dropbtnNotify"
+      />
+    </button>
+    <div id="myDropdownNotify" class="dropdownNotify-content">
+      <a href="">Message received from Customer 01.</a>
+      <a href="">Customer 03 placed an order</a>
+      <a href="">Admin : New features added. Click here to check.</a>
+    </div>
   </div>
-  <div class="sidebottom">
-    <input id="nbs" type="image" src="/images/loginSignup/poweredbynbs.png">
+
+  <!-- end -->
+  <script>
+    /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+    function myFunctionNotify() {
+      document.getElementById("myDropdownNotify").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+      if (!event.target.matches(".dropbtnNotify")) {
+        var dropdowns = document.getElementsByClassName(
+                "dropdownNotify-content"
+        );
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains("show")) {
+            openDropdown.classList.remove("show");
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- <img src="../images/profilePic.svg" id="userIcon" />
+
+  <img src="../images/notificationIcon.svg" id="notification" /> -->
+
+  <div class="notification"></div>
+</div>
+
+<div class="dashDiscription">
+  <h2>Settings</h2>
+</div>
+
+<!--
+<div class="dashBoardDescriptionParagraph">
+  A quick data overview of the inventory and Customers
+</div> -->
+<div class="sideBarContainer">
+  <img src="/images/dashboard/pharmacyLogo.svg" class="logoIcon" />
+
+  <div class="sideBarContainer">
+    <img src="/images/dashboard/pharmacyLogo.svg" class="logoIcon" />
+
+    <div class="sideBarButtonContainer">
+      <a href="/pharmacy/dashboard">
+        <button
+                onclick="document.location='pharmacydashboard.html'"
+                class="dashboardButton"
+        >
+          <div id="dashboardLine">Dashboard</div>
+          <img
+                  src="/images/dashboard/newDashboardIcon.svg"
+                  id="dashboardButtonIcon"
+          />
+        </button>
+      </a>
+
+      <a href="/pharmacy/viewinventory">
+        <button class="iventoryButton">
+          <div id="iventoryLine">Inventory</div>
+          <img
+                  src="/images/dashboard/iventoryButton.svg"
+                  id="iventoryButtonIcon"
+          />
+        </button>
+      </a>
+      <a href="/pharmacy/viewprescriptions">
+        <button
+                onclick="document.location='pharmacyviewprescriptions.html'"
+                class="prescriptionsButton"
+        >
+          <div id="prescriptionLine">Prescriptions</div>
+          <img
+                  src="/images/dashboard/prescriptionButtonIcon.svg"
+                  id="prescriptionButtonIcon"
+          />
+        </button>
+      </a>
+      <a href="/pharmacy/vieworders">
+        <button class="customerChatButton">
+          <img src="/images/dashboard/cart.svg" id="chatButtonIcon" />
+          <div id="chatLine">Orders</div>
+        </button>
+      </a>
+
+      <a href="/pharmacy/viewpharmacy">
+        <button class="profileButton">
+          <img src="/images/dashboard/profile.png" id="profileButtonIcon" />
+          <div id="profileLine">Profile</div>
+        </button>
+      </a>
+
+      <a href="/pharmacy/settings">
+        <button class="applicationSettingsButton">
+          <div id="applicationSettingsLine">Settings</div>
+
+          <img
+                  src="/images/dashboard/ApplicationSettingsICon.svg"
+                  id="ApplicationSettingsICon"
+          />
+        </button>
+      </a>
+      <a href="/pharmacy/technicalhelp">
+        <button class="getTechnicalHelpButton">
+          <div id="getTechnicalHelpLine">Get Technical Help</div>
+          <img src="/images/dashboard/gethelpIcon.svg" id="gethelpICon" />
+        </button>
+      </a>
+      <a href="/logout">
+        <button class="logOutButton">
+          <div id="logOutLine">Log Out</div>
+          <img src="/images/profile/logout.png" id="logOutIcon" />
+        </button>
+      </a>
+    </div>
   </div>
-</div>
-<div class="formcontainer">
-  <form action="#" th:action="@{/pharmacy/changename/{registrationId}(registrationId=${registrationId})}" th:object="${accountForm}" method="post">
-    <label for="changePharmacyName">Change Pharmacy Name:</label><br>
-    <input type="text" id="changePharmacyName" name="changePharmacyName" th:field="*{pharmacyName}"><br>
-    <input id="changePharmacyNameB" type="submit" value="Change">
-  </form>
+  <div class="formcontainer">
+    <form action="#" th:action="@{/pharmacy/changename/{registrationId}(registrationId=${registrationId})}" th:object="${accountForm}" method="post">
+      <label for="changePharmacyName">Change Pharmacy Name:</label><br>
+      <input type="text" required placeholder="Type the pharmacy name here.." id="changePharmacyName" name="changePharmacyName" th:field="*{pharmacyName}"><br>
+      <input id="changePharmacyNameB" type="submit" value="Change">
+    </form>
 
-  <br><br>
+    <br><br>
 
-  <form action="#" th:action="@{/pharmacy/changecontact/{registrationId}(registrationId=${registrationId})}" th:object="${accountForm}" method="post">
-    <label for="changeContactNo">Change Contact:</label><br>
-    <input type="text" id="changeContactNo" name="changeContactNo" th:field="*{contactNo}"><br>
-    <input id="changeContactNoB" type="submit" value="Change">
-  </form>
+    <form action="#" th:action="@{/pharmacy/changecontact/{registrationId}(registrationId=${registrationId})}" th:object="${accountForm}" method="post">
+      <label for="changeContactNo">Change Contact:</label><br>
+      <input type="text" required placeholder="Type the contact number here.." id="changeContactNo" name="changeContactNo" th:field="*{contactNo}"><br>
+      <input id="changeContactNoB" type="submit" value="Change">
+    </form>
 
-  <br><br>
+    <br><br>
 
-  <form action="#" th:action="@{/pharmacy/changeownername/{registrationId}(registrationId=${registrationId})}" th:object="${accountForm}" method="post">
-    <label for="changeOwnerName">Change Owner Name:</label><br>
-    <input type="text" id="changeOwnerName" name="changeOwnerName" th:field="*{ownerName}"><br>
-    <input id="changeOwnerNameB" type="submit" value="Change">
-  </form>
+    <form action="#" th:action="@{/pharmacy/changeownername/{registrationId}(registrationId=${registrationId})}" th:object="${accountForm}" method="post">
+      <label for="changeOwnerName">Change Owner Name:</label><br>
+      <input type="text" required placeholder="Type the name here.." id="changeOwnerName" name="changeOwnerName" th:field="*{ownerName}"><br>
+      <input id="changeOwnerNameB" type="submit" value="Change">
+    </form>
 
-  <br><br>
+    <br><br>
 
-  <form action="#" th:action="@{/pharmacy/changepassword/{registrationId}(registrationId=${registrationId})}" th:object="${passwordForm}" method="post">
-    <label for="currentPassword">Current Password:</label><br>
-    <input type="password" id="currentPassword" name="currentPassword" th:field="*{currentPassword}"><br>
-    <label for="newPassword">New Password:</label><br>
-    <input type="password" id="newPassword" name="newPassword" th:field="*{newPassword}"><br>
-    <label for="confirmPassword">Confirm Password:</label><br>
-    <input type="password" id="confirmPassword" name="confirmPassword" th:field="*{confirmPassword}"><br>
-    <input id="changePasswordB" type="submit" value="Change">
-  </form>
-</div>
+    <form action="#" th:action="@{/pharmacy/changepassword/{registrationId}(registrationId=${registrationId})}" th:object="${passwordForm}" method="post">
+      <label for="currentPassword">Current Password:</label><br>
+      <input type="password" required placeholder="Enter your current password.." id="currentPassword" name="currentPassword" th:field="*{currentPassword}"><br>
+      <label for="newPassword">New Password:</label><br>
+      <input type="password" required placeholder="Enter your new password.." id="newPassword" name="newPassword" th:field="*{newPassword}"><br>
+      <label for="confirmPassword">Confirm Password:</label><br>
+      <input type="password" required placeholder="Re-type your password.." id="confirmPassword" name="confirmPassword" th:field="*{confirmPassword}"><br>
+      <input id="changePasswordB" type="submit" value="Change">
+    </form>
+  </div>
+  tainer" id="statusCard3">-->
+  <!--  <div class="statusCardHeader">Customer</div>-->
+  <!--  <hr />-->
+  <!--  &lt;!&ndash; <div class="statusCardLeftSideUp">Count</div> &ndash;&gt;-->
+  <!--  <div class="statusCardLeftSideDown">Total no of Customers</div>-->
+  <!--  &lt;!&ndash; <div class="statusCardRightSideUp">Count</div> &ndash;&gt;-->
+  <!--  <div id="cardCountRightSideDown">Count</div>-->
+  <!--</div>-->
+  <footer>
+    <div class="footerTextContainer">
+      <div class="footerUp" id="footerUp">Powered by</div>
+      <div class="footerDown">
+        <b>Noobz69</b>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>

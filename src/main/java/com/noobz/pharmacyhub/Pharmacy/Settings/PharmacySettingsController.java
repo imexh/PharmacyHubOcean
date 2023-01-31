@@ -40,7 +40,7 @@ public class PharmacySettingsController {
         Account account1 = pharmacySettingsService.getAccountDetails(registrationId);
         account.setAll(registrationId, accountForm.getPharmacyName(), account1.getContactNo(),
                 account1.getOwnerName(), account1.getProvince(), account1.getDistrict(),
-                account1.getCity(), account1.getPassword());
+                account1.getCity(), account1.getPassword(), account1.getImageUrl());
         pharmacySettingsService.updateAccountDetails(account);
         return "redirect:/pharmacy/settings";
     }
@@ -53,7 +53,7 @@ public class PharmacySettingsController {
         Account account1 = pharmacySettingsService.getAccountDetails(registrationId);
         account.setAll(registrationId, account1.getPharmacyName(), accountForm.getContactNo(),
                 account1.getOwnerName(), account1.getProvince(), account1.getDistrict(),
-                account1.getCity(), account1.getPassword());
+                account1.getCity(), account1.getPassword(), account1.getImageUrl());
         pharmacySettingsService.updateAccountDetails(account);
         return "redirect:/pharmacy/settings";
     }
@@ -66,7 +66,7 @@ public class PharmacySettingsController {
         Account account1 = pharmacySettingsService.getAccountDetails(registrationId);
         account.setAll(registrationId, account1.getPharmacyName(), account1.getContactNo(),
                 accountForm.getOwnerName(), account1.getProvince(), account1.getDistrict(),
-                account1.getCity(), account1.getPassword());
+                account1.getCity(), account1.getPassword(), account1.getImageUrl());
         pharmacySettingsService.updateAccountDetails(account);
         return "redirect:/pharmacy/settings";
     }
@@ -91,7 +91,7 @@ public class PharmacySettingsController {
         {
             account.setAll(registrationId, account1.getPharmacyName(), account1.getContactNo(),
                     account1.getOwnerName(), account1.getProvince(), account1.getDistrict(),
-                    account1.getCity(), passwordSecurity.encryptPassword(passwordForm.getNewPassword()));
+                    account1.getCity(), passwordSecurity.encryptPassword(passwordForm.getNewPassword()), account1.getImageUrl());
             pharmacySettingsService.updateAccountDetails(account);
         }
         return "redirect:/pharmacy/settings";

@@ -12,25 +12,17 @@
 />
 
 <div class="navBarContainer">
-    <div class="wrap">
-        <div class="search">
-            <input
-                    type="text"
-                    class="searchTerm"
-                    placeholder="Search for anything here..."
-            />
-        </div>
-    </div>
+
     <!-- setting the clicable dropdown -->
     <div class="dropdown">
         <button onclick="myFunction()" class="dropbtn">
             <!-- <button onclick="myFunction()" id="userIcon"> -->
-            <!-- <img src="../../public/images/profilePic.svg" id="userIcon" /> -->
+            <!-- <img src="../images/profilePic.svg" id="userIcon" /> -->
             <img src="/images/dashboard/profilePic.svg" class="dropbtn" />
         </button>
         <div id="myDropdown" class="dropdown-content">
-            <a href="">My Profile</a>
-            <a href="">Logout</a>
+            <a href="/pharmacy/viewpharmacy">My Profile</a>
+            <a href="/logout">Logout</a>
             <!-- <a href="">Contact</a> -->
         </div>
     </div>
@@ -39,29 +31,30 @@
         /* When the user clicks on the button,
       toggle between hiding and showing the dropdown content */
         function myFunction() {
-          document.getElementById("myDropdown").classList.toggle("show");
+            document.getElementById("myDropdown").classList.toggle("show");
         }
 
         // Close the dropdown if the user clicks outside of it
         window.onclick = function (event) {
-          if (!event.target.matches(".dropbtn")) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-              var openDropdown = dropdowns[i];
-              if (openDropdown.classList.contains("show")) {
-                openDropdown.classList.remove("show");
-              }
+            if (!event.target.matches(".dropbtn")) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains("show")) {
+                        openDropdown.classList.remove("show");
+                    }
+                }
             }
-          }
         };
-      </script>
+    </script>
 
+    <!-- testing for notification -->
     <!-- testing for notification -->
     <div class="dropdownNotify">
         <button onclick="myFunctionNotify()" class="dropbtnNotify">
             <!-- <button onclick="myFunction()" id="userIcon"> -->
-            <!-- <img src="../../public/images/profilePic.svg" id="userIcon" /> -->
+            <!-- <img src="../images/profilePic.svg" id="userIcon" /> -->
             <img
                     src="/images/dashboard/notificationIcon.svg"
                     class="dropbtnNotify"
@@ -77,31 +70,31 @@
     <!-- end -->
     <script>
         /* When the user clicks on the button,
-  toggle between hiding and showing the dropdown content */
+    toggle between hiding and showing the dropdown content */
         function myFunctionNotify() {
-          document.getElementById("myDropdownNotify").classList.toggle("show");
+            document.getElementById("myDropdownNotify").classList.toggle("show");
         }
 
         // Close the dropdown if the user clicks outside of it
         window.onclick = function (event) {
-          if (!event.target.matches(".dropbtnNotify")) {
-            var dropdowns = document.getElementsByClassName(
-              "dropdownNotify-content"
-            );
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-              var openDropdown = dropdowns[i];
-              if (openDropdown.classList.contains("show")) {
-                openDropdown.classList.remove("show");
-              }
+            if (!event.target.matches(".dropbtnNotify")) {
+                var dropdowns = document.getElementsByClassName(
+                    "dropdownNotify-content"
+                );
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains("show")) {
+                        openDropdown.classList.remove("show");
+                    }
+                }
             }
-          }
         };
-      </script>
+    </script>
 
-    <!-- <img src="../../public/images/profilePic.svg" id="userIcon" />
+    <!-- <img src="../images/profilePic.svg" id="userIcon" />
 
-    <img src="../../public/images/notificationIcon.svg" id="notification" /> -->
+    <img src="../images/notificationIcon.svg" id="notification" /> -->
 
     <div class="notification"></div>
 </div>
@@ -110,9 +103,6 @@
     <h2>Add New Medicine</h2>
 </div>
 
-<!-- <div id="dashBoardParagraph">
-  A quick data overview of the inventory and Customers
-</div> -->
 <!--
 <div class="dashBoardDescriptionParagraph">
   A quick data overview of the inventory and Customers
@@ -120,115 +110,139 @@
 <div class="sideBarContainer">
     <img src="/images/dashboard/pharmacyLogo.svg" class="logoIcon" />
 
-    <div class="sideBarButtonContainer">
-        <a href="/pharmacy/dashboard">
-            <button class="dashboardButton">
-                Dashboard
-                <img
-                        src="/images/dashboard/newDashboardIcon.svg"
-                        id="dashboardButtonIcon"
-                />
-            </button>
-        </a>
-        <a href="/pharmacy/viewinventory">
-            <button class="iventoryButton">
-                Iventory
-                <img
-                        src="/images/dashboard/iventoryButton.svg"
-                        id="iventoryButtonIcon"
-                />
-            </button>
-        </a>
-        <a href="/pharmacy/viewpharmacy">
-            <button class="pharmacyButton">
-                Pharmacy
-                <img
-                        src="/images/dashboard/newpharmacy.svg"
-                        id="pharmacyButtonIcon"
-                />
-            </button>
-        </a>
-        <a href="/pharmacy/viewprescriptions">
-            <!-- <button class="prescriptionsButton"> -->
-            <button class="prescriptionsButton">
-                Prescriptions
-                <img
-                        src="/images/dashboard/prescriptionButtonIcon.svg"
-                        id="prescriptionButtonIcon"
-                />
-            </button>
-        </a>
-        <a href="/pharmacy/vieworders">
-            <button class="customerChatButton">
-                <!-- Chat With Customer -->
-                Orders
-                <img
-                        src="/images/dashboard/chatButtonIcon.svg"
-                        id="chatButtonIcon"
-                />
-            </button>
-        </a>
-        <a href="/pharmacy/settings">
-            <button class="applicationSettingsButton">
-                Application Settings
-                <img
-                        src="/images/dashboard/ApplicationSettingsICon.svg"
-                        id="ApplicationSettingsICon"
-                />
-            </button>
-        </a>
-        <a href="/pharmacy/technicalhelp">
-            <button class="getTechnicalHelpButton">
-                Get Technical Help
-                <img src="/images/dashboard/gethelpIcon.svg" id="gethelpICon" />
-            </button>
-        </a>
-    </div>
-</div>
-<form action="#" th:action="@{/pharmacy/addmedicine}" th:object="${medicineDetails}" method="post">
-    <div class="addNewMEdicineFormContainer">
-        <div class="medicineTextAreaContainer">
-            <div class="medicinetextAreaUpper">Medicine Name</div>
-            <div class="medicineTextAreaDown">
-                <textarea id="medicineTextAreaContainer" th:field="*{medicineName}"></textarea>
-            </div>
-        </div>
-        <div class="medicineTextAreaContainer2">
-            <div class="medicinetextArea2Upper">Medicine ID</div>
-            <div class="medicineTextArea2Down">
-                <textarea id="medicineTextAreaContainer2" th:field="*{medicineId}"></textarea>
-            </div>
-        </div>
-        <div class="medicineTextAreaContainer3">
-            <div class="medicinetextArea3Upper">Quantity in Number</div>
-            <div class="medicineTextArea3Down">
-                <textarea id="medicineTextAreaContainer3" th:field="*{quantity}"></textarea>
-            </div>
-        </div>
-        <div class="medicineTextAreaContainer4">
-            <div class="medicinetextArea4Upper">How to use</div>
-            <div class="medicineTextArea4Down">
-                <textarea id="medicineTextAreaContainer4" th:field="*{howToUse}"></textarea>
-            </div>
-        </div>
-        <div class="medicineTextAreaContainer5">
-            <div class="medicinetextArea5Upper">Side Effects</div>
-            <div class="medicineTextArea5Down">
-                <textarea id="medicineTextAreaContainer5" th:field="*{sideEffects}"></textarea>
-            </div>
-        </div>
-        <!-- <button class="addNewMedicineBtn">Save Details</button> -->
-        <input class="addNewMedicineBtn" type="submit" value="Save Details">
-    </div>
-</form>
+    <div class="sideBarContainer">
+        <img src="/images/dashboard/pharmacyLogo.svg" class="logoIcon" />
 
-<footer>
-    <div class="footerTextContainer">
-        <div class="footerUp" id="footerUp">Powered by</div>
-        <div class="footerDown">
-            <b>Noobz69</b>
+        <div class="sideBarButtonContainer">
+            <a href="/pharmacy/dashboard">
+                <button
+                        onclick="document.location='pharmacydashboard.html'"
+                        class="dashboardButton"
+                >
+                    <div id="dashboardLine">Dashboard</div>
+                    <img
+                            src="/images/dashboard/newDashboardIcon.svg"
+                            id="dashboardButtonIcon"
+                    />
+                </button>
+            </a>
+
+            <a href="/pharmacy/viewinventory">
+                <button class="iventoryButton">
+                    <div id="iventoryLine">Inventory</div>
+                    <img
+                            src="/images/dashboard/iventoryButton.svg"
+                            id="iventoryButtonIcon"
+                    />
+                </button>
+            </a>
+            <a href="/pharmacy/viewprescriptions">
+                <button
+                        onclick="document.location='pharmacyviewprescriptions.html'"
+                        class="prescriptionsButton"
+                >
+                    <div id="prescriptionLine">Prescriptions</div>
+                    <img
+                            src="/images/dashboard/prescriptionButtonIcon.svg"
+                            id="prescriptionButtonIcon"
+                    />
+                </button>
+            </a>
+            <a href="/pharmacy/vieworders">
+                <button class="customerChatButton">
+                    <img src="/images/dashboard/cart.svg" id="chatButtonIcon" />
+                    <div id="chatLine">Orders</div>
+                </button>
+            </a>
+
+            <a href="/pharmacy/viewpharmacy">
+                <button class="profileButton">
+                    <img src="/images/dashboard/profile.png" id="profileButtonIcon" />
+                    <div id="profileLine">Profile</div>
+                </button>
+            </a>
+
+            <a href="/pharmacy/settings">
+                <button class="applicationSettingsButton">
+                    <div id="applicationSettingsLine">Settings</div>
+
+                    <img
+                            src="/images/dashboard/ApplicationSettingsICon.svg"
+                            id="ApplicationSettingsICon"
+                    />
+                </button>
+            </a>
+            <a href="/pharmacy/technicalhelp">
+                <button class="getTechnicalHelpButton">
+                    <div id="getTechnicalHelpLine">Get Technical Help</div>
+                    <img src="/images/dashboard/gethelpIcon.svg" id="gethelpICon" />
+                </button>
+            </a>
+            <a href="/logout">
+                <button class="logOutButton">
+                    <div id="logOutLine">Log Out</div>
+                    <img src="/images/profile/logout.png" id="logOutIcon" />
+                </button>
+            </a>
         </div>
     </div>
-</footer>
+
+    <form action="#" th:action="@{/pharmacy/addmedicine}" th:object="${medicineDetails}" method="post">
+        <div class="addNewMEdicineFormContainer">
+            <div class="medicineTextAreaContainer">
+                <div class="medicinetextAreaUpper">Medicine Name</div>
+                <div class="medicineTextAreaDown">
+                    <textarea id="medicineTextAreaContainer" th:field="*{medicineName}"></textarea>
+                </div>
+            </div>
+            <div class="medicineTextAreaContainer2">
+                <div class="medicinetextArea2Upper">Medicine ID</div>
+                <div class="medicineTextArea2Down">
+                    <textarea id="medicineTextAreaContainer2" th:field="*{medicineId}"></textarea>
+                </div>
+            </div>
+            <div class="medicineTextAreaContainer3">
+                <div class="medicinetextArea3Upper">Quantity in Number</div>
+                <div class="medicineTextArea3Down">
+                    <textarea id="medicineTextAreaContainer3" th:field="*{quantity}"></textarea>
+                </div>
+            </div>
+            <div class="medicineTextAreaContainer4">
+                <div class="medicinetextArea4Upper">How to use</div>
+                <div class="medicineTextArea4Down">
+                    <textarea id="medicineTextAreaContainer4" th:field="*{howToUse}"></textarea>
+                </div>
+            </div>
+            <div class="medicineTextAreaContainer5">
+                <div class="medicinetextArea5Upper">Side Effects</div>
+                <div class="medicineTextArea5Down">
+                    <textarea id="medicineTextAreaContainer5" th:field="*{sideEffects}"></textarea>
+                </div>
+            </div>
+
+            <!-- <button class="addNewMedicineBtn">Save Details</button> -->
+            <input class="addNewMedicineBtn" type="submit" value="Save Details">
+        </div>
+    </form>
+
+
+    <!--<div class="statusCardContainer" id="statusCard3">-->
+    <!--  <div class="statusCardHeader">Customer</div>-->
+    <!--  <hr />-->
+    <!--  &lt;!&ndash; <div class="statusCardLeftSideUp">Count</div> &ndash;&gt;-->
+    <!--  <div class="statusCardLeftSideDown">Total no of Customers</div>-->
+    <!--  &lt;!&ndash; <div class="statusCardRightSideUp">Count</div> &ndash;&gt;-->
+    <!--  <div id="cardCountRightSideDown">Count</div>-->
+    <!--</div>-->
+    <footer>
+        <div class="footerTextContainer">
+            <div class="footerUp" id="footerUp">Powered by</div>
+            <div class="footerDown">
+                <b>Noobz69</b>
+            </div>
+        </div>
+    </footer>
+
+</div>
 </body>
 </html>

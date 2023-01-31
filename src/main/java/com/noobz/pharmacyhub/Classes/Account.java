@@ -12,11 +12,13 @@ public class Account {
     String district;
     String password;
 
+    String imageUrl;
+
     public Account() {
     }
 
     public void setAll(String registrationId, String pharmacyName, String contactNo, String ownerName,
-                       String province, String district, String city, String password)
+                       String province, String district, String city, String password, String imageUrl)
     {
         this.registrationId = registrationId;
         this.pharmacyName = pharmacyName;
@@ -26,6 +28,7 @@ public class Account {
         this.district = district;
         this.city = city;
         this.password = password;
+        this.imageUrl = imageUrl;
     }
 
     public String getPharmacyName() {
@@ -90,5 +93,13 @@ public class Account {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

@@ -10,6 +10,9 @@ import java.io.FileInputStream;
 
 @Service
 public class FirebaseInitialization {
+    public FirebaseInitialization() {
+    }
+
     @PostConstruct
     public void initialization()
     {

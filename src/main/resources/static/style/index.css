@@ -13,12 +13,12 @@
 }
 nav{
     display: flex;
-    padding: 2% 6%;
+    padding: 1% 1%;
     justify-content: space-between;
     align-items: center;
 }
 nav img{
-    width: 150px;   
+    width: 70%;
 }
 .Links{
     flex: 1;
@@ -86,6 +86,9 @@ nav img{
 .Links ul li:hover .dropmenu2 ul{
     display: block;
     margin: 10px;
+}
+.image img{
+    margin-top:50px;
 }
 
 

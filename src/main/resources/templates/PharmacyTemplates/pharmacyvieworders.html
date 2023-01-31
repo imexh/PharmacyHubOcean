@@ -1,203 +1,270 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<html>
 <head>
-  <meta charset="UTF-8">
   <title>Orders</title>
 </head>
-<style>
-  body{
-    background-image: url(/images/loginSignup/PharmacyBG1Op12.png);
-  }
-  .topcontainer{
-    float: right;
-    height: 100px;
-    width: 70%;
-  }
-  input[id=logo]{
-    float: left;
-    height: 32px;
-    width: auto;
-    margin-top: 18px;
-    margin-left: 20px;
-  }
-  input[id=proficon]{
-    float: right;
-    height: 32px;
-    width: 32px;
-    padding: 18px;
-  }
-  input[id=topsrch]{
-    float: left;
-    margin-top: 10px;
-    margin-left: 10%;
-    height: 30px;
-    width: 400px;
-    border-radius: 10px;
-    border: 2px solid #068B2E;
-  }
-  .sidecontainer{
-    float: left;
-    width: 250px;
-    height: 690px;
-    border: 2px solid #f9f9f9;
-    background-color: #f9f9f9;
-    margin: 0px;
-  }
-  .sidebottom{
-    float: left;
-    width: 250px;
-    height: 60px;
-    border: 1px solid #068B2E;
-    background-color: #068B2E;
-    margin-top: 200px;
-  }
-  input[id=nbs]{
-    float: left;
-    width: 100px;
-    height: auto;
-    margin-top: 10px;
-    margin-left: 70px;
-  }
-  .sidebuttons{
-    float: left;
-    width: auto;
-    height: auto;
-    margin-top: 100px;
-    margin-left: 20px;
-  }
-  button[id=dash],[id=phar],[id=cust],[id=med],[id=ads],[id=sett],[id=tec],[id=lgout] {
-    width: 200px;
-    height: 30px;
-    align-self: auto;
-    margin-top: 5px;
-    font-size: 12pt;
-    border-radius: 10px;
-    border: 1px transparent;
-    background-color: transparent;
-  }
-  button[id=ads]{
-    background-color: #068B2E;
-    color: #f9f9f9;
-  }
-  .tablecontainer{
-    float: left;
-    width: 450px;
-    margin-left: 200px;
-  }
-  table[id=phar1]{
-    float: left;
-    width: 400px;
-    height: 60px;
-  }
-  .table1{
-    float: left;
-    width: 420px;
-    height: 80px;
-    padding-top: 5px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    border: 2px solid #068b2e;
-  }
-  button[id=addph]{
-    width: 150px;
-    height: 30px;
-    margin: 5px;
-    margin-top: 100px;
-    color: #f9f9ff;
-    border: #068b2e;
-    background-color: #068b2e;
-    border-radius: 10px;
-  }
-  input[id=dltb]{
-    width: 16px;
-    height: 16px;
-    margin-left: 40px;
-  }
-  input[id=addbt]{
-    width: 56px;
-    height: 56px;
-  }
-  .addphar{
-    float: right;
-    margin-top: 40px;
-  }
 
-</style>
+<link rel="stylesheet" href="/style/viewOrders.css" />
 <body>
-<div class="topcontainer">
-  <div class="topsearch">
-    <input id="topsrch" type="text" placeholder="Search for anything here.">
-  </div>
-  <input id="proficon" type="image" src="/images/loginSignup/user.png">
-</div>
-<div class="sidecontainer">
-  <input id="logo" type="image" src="/images/loginSignup/logowtext.png">
-  <div class="sidebuttons">
-    <a href="/pharmacy/dashboard">
-      <button id="dash">Dashboard</button>
-    </a><br>
-    <a href="/pharmacy/viewinventory">
-      <button id="phar">Inventory</button>
-    </a><br>
-    <a href="/pharmacy/viewpharmacy">
-      <button id="cust">Pharmacy</button>
-    </a><br>
-    <a href="/pharmacy/viewprescriptions">
-      <button id="med">Prescriptions</button>
-    </a><br>
-    <a href="/pharmacy/vieworders">
-      <button id="ads">Orders</button>
-    </a><br>
-    <!-- <a href="/admin/settings">
-      <button id="sett">Chat with Customers</button>
-    </a><br> -->
-    <a href="/pharmacy/settings">
-      <button id="sett">Settings</button>
-    </a><br>
-    <a href="/pharmacy/technicalhelp">
-      <button id="tec">Get Technical help</button>
-    </a><br>
-    <a href="/logout">
-      <button id="lgout">Logout</button>
-    </a>
-  </div>
-  <div class="sidebottom">
-    <input id="nbs" type="image" src="/images/loginSignup/poweredbynbs.png">
-  </div>
-</div>
-<div class="tablecontainer">
-  <h1>View Orders</h1>
-  <br>
-  <th:block th:each="order : ${orderList}">
-    <div class="table1">
-      <table id="phar1">
-        <tr>
-          <th th:text="${order.orderId}"></th>
-          <th> </th>
-          <th> </th>
-          <th>
-            <form action="#" th:action="@{/pharmacy/vieworders/{orderId}(orderId=${order.orderId})}" method="post">
-              <a>
-                <input id="dltb" type="image" src="/images/loginSignup/delete.png">
-              </a>
-            </form>
-          </th>
-        </tr>
-        <tr>
-          <td>Customer Username</td>
-          <td>Medicine ID</td>
-          <td>Quantity</td>
-          <td>Contact</td>
-        </tr>
-        <tr>
-          <td th:text="${order.customerUsername}"></td>
-          <td th:text="${order.medicineId}"></td>
-          <td th:text="${order.quantity}"></td>
-          <td th:text="${order.customerContact}"></td>
-        </tr>
-      </table>
+<img
+        src="/images/dashboard/PharmacyBG1.png"
+        class="background"
+        alt="Body Background Image"
+/>
+
+<div class="navBarContainer">
+
+  <!-- setting the clicable dropdown -->
+  <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">
+      <!-- <button onclick="myFunction()" id="userIcon"> -->
+      <!-- <img src="../images/profilePic.svg" id="userIcon" /> -->
+      <img src="/images/dashboard/profilePic.svg" class="dropbtn" />
+    </button>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="/pharmacy/viewpharmacy">My Profile</a>
+      <a href="/logout">Logout</a>
+      <!-- <a href="">Contact</a> -->
     </div>
-  </th:block>
+  </div>
+
+  <script>
+    /* When the user clicks on the button,
+  toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+      if (!event.target.matches(".dropbtn")) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains("show")) {
+            openDropdown.classList.remove("show");
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- testing for notification -->
+  <!-- testing for notification -->
+  <div class="dropdownNotify">
+    <button onclick="myFunctionNotify()" class="dropbtnNotify">
+      <!-- <button onclick="myFunction()" id="userIcon"> -->
+      <!-- <img src="../images/profilePic.svg" id="userIcon" /> -->
+      <img
+              src="/images/dashboard/notificationIcon.svg"
+              class="dropbtnNotify"
+      />
+    </button>
+    <div id="myDropdownNotify" class="dropdownNotify-content">
+      <a href="">Message received from Customer 01.</a>
+      <a href="">Customer 03 placed an order</a>
+      <a href="">Admin : New features added. Click here to check.</a>
+    </div>
+  </div>
+
+  <!-- end -->
+  <script>
+    /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+    function myFunctionNotify() {
+      document.getElementById("myDropdownNotify").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+      if (!event.target.matches(".dropbtnNotify")) {
+        var dropdowns = document.getElementsByClassName(
+                "dropdownNotify-content"
+        );
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains("show")) {
+            openDropdown.classList.remove("show");
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- <img src="../images/profilePic.svg" id="userIcon" />
+
+  <img src="../images/notificationIcon.svg" id="notification" /> -->
+
+  <div class="notification"></div>
+</div>
+
+<div class="dashDiscription">
+  <h2>View Orders</h2>
+</div>
+
+<!--
+<div class="dashBoardDescriptionParagraph">
+  A quick data overview of the inventory and Customers
+</div> -->
+<div class="sideBarContainer">
+  <img src="/images/dashboard/pharmacyLogo.svg" class="logoIcon" />
+
+  <div class="sideBarContainer">
+    <img src="/images/dashboard/pharmacyLogo.svg" class="logoIcon" />
+
+    <div class="sideBarButtonContainer">
+      <a href="/pharmacy/dashboard">
+        <button
+                onclick="document.location='pharmacydashboard.html'"
+                class="dashboardButton"
+        >
+          <div id="dashboardLine">Dashboard</div>
+          <img
+                  src="/images/dashboard/newDashboardIcon.svg"
+                  id="dashboardButtonIcon"
+          />
+        </button>
+      </a>
+
+      <a href="/pharmacy/viewinventory">
+        <button class="iventoryButton">
+          <div id="iventoryLine">Inventory</div>
+          <img
+                  src="/images/dashboard/iventoryButton.svg"
+                  id="iventoryButtonIcon"
+          />
+        </button>
+      </a>
+      <a href="/pharmacy/viewprescriptions">
+        <button
+                onclick="document.location='pharmacyviewprescriptions.html'"
+                class="prescriptionsButton"
+        >
+          <div id="prescriptionLine">Prescriptions</div>
+          <img
+                  src="/images/dashboard/prescriptionButtonIcon.svg"
+                  id="prescriptionButtonIcon"
+          />
+        </button>
+      </a>
+      <a href="/pharmacy/vieworders">
+        <button class="customerChatButton">
+          <img src="/images/dashboard/cart.svg" id="chatButtonIcon" />
+          <div id="chatLine">Orders</div>
+        </button>
+      </a>
+
+      <a href="/pharmacy/viewpharmacy">
+        <button class="profileButton">
+          <img src="/images/dashboard/profile.png" id="profileButtonIcon" />
+          <div id="profileLine">Profile</div>
+        </button>
+      </a>
+
+      <a href="/pharmacy/settings">
+        <button class="applicationSettingsButton">
+          <div id="applicationSettingsLine">Settings</div>
+
+          <img
+                  src="/images/dashboard/ApplicationSettingsICon.svg"
+                  id="ApplicationSettingsICon"
+          />
+        </button>
+      </a>
+      <a href="/pharmacy/technicalhelp">
+        <button class="getTechnicalHelpButton">
+          <div id="getTechnicalHelpLine">Get Technical Help</div>
+          <img src="/images/dashboard/gethelpIcon.svg" id="gethelpICon" />
+        </button>
+      </a>
+      <a href="/logout">
+        <button class="logOutButton">
+          <div id="logOutLine">Log Out</div>
+          <img src="/images/profile/logout.png" id="logOutIcon" />
+        </button>
+      </a>
+    </div>
+  </div>
+
+  <div>
+
+    <th:block th:each="order : ${orderList}">
+      <div>
+        <!--      <table id="phar1">-->
+        <!--        <tr>-->
+        <!--          <th th:text="${order.orderId}"></th>-->
+        <!--          <th> </th>-->
+        <!--          <th> </th>-->
+        <!--          <th>-->
+        <!--            <form action="#" th:action="@{/pharmacy/vieworders/{orderId}(orderId=${order.orderId})}" method="post">-->
+        <!--              <a>-->
+        <!--                <input id="dltb" type="image" src="/images/loginSignup/delete.png">-->
+        <!--              </a>-->
+        <!--            </form>-->
+        <!--          </th>-->
+        <!--        </tr>-->
+        <!--        <tr class="trows">-->
+        <!--          <td>Customer Username</td>-->
+        <!--          <td>Medicine ID</td>-->
+        <!--          <td>Quantity</td>-->
+        <!--          <td>Contact</td>-->
+        <!--        </tr>-->
+        <!--        <tr>-->
+
+        <!--        </tr>-->
+        <!--      </table>-->
+        <table>
+          <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Customer Username</th>
+            <th>Medicine ID</th>
+            <th>Quantity</th>
+            <th>Contact Number</th>
+            <th>Delete order</th>
+          </tr>
+          <thead>
+          <tbody>
+          <tr>
+            <td th:text="${order.orderId}"></td>
+            <td th:text="${order.customerUsername}"></td>
+            <td th:text="${order.medicineId}"></td>
+            <td th:text="${order.quantity}"></td>
+            <td th:text="${order.customerContact}"></td>
+            <td>
+              <form action="#" th:action="@{/pharmacy/vieworders/{orderId}(orderId=${order.orderId})}" method="post">
+                <a>
+                  <input id="dltb" type="image" src="/images/loginSignup/delete.png">
+                </a>
+              </form>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </th:block>
+
+  </div>
+
+
+
+  <!--<div class="statusCardContainer" id="statusCard3">-->
+  <!--  <div class="statusCardHeader">Customer</div>-->
+  <!--  <hr />-->
+  <!--  &lt;!&ndash; <div class="statusCardLeftSideUp">Count</div> &ndash;&gt;-->
+  <!--  <div class="statusCardLeftSideDown">Total no of Customers</div>-->
+  <!--  &lt;!&ndash; <div class="statusCardRightSideUp">Count</div> &ndash;&gt;-->
+  <!--  <div id="cardCountRightSideDown">Count</div>-->
+  <!--</div>-->
+  <footer>
+    <div class="footerTextContainer">
+      <div class="footerUp" id="footerUp">Powered by</div>
+      <div class="footerDown">
+        <b>Noobz69</b>
+      </div>
+    </div>
+  </footer>
 
 </div>
 </body>

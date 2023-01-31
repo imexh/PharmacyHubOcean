@@ -1,50 +1,263 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>Pharmacy</title>
+  <title>Profile</title>
 </head>
+
+<link rel="stylesheet" href="/style/profile.css" />
 <body>
-<a href="/pharmacy/dashboard">
-  <button>Dashboard</button>
-</a>
-<a href="/pharmacy/viewinventory">
-  <button>Inventory</button>
-</a>
-<a href="/pharmacy/viewpharmacy">
-  <button>Pharmacy</button>
-</a>
-<a href="/pharmacy/viewprescriptions">
-  <button>Prescriptions</button>
-</a>
-<a href="/pharmacy/vieworders">
-  <button>Orders</button>
-</a>
-<a href="/pharmacy/chat">
-  <button>Chat with customers</button>
-</a>
-<a href="/pharmacy/settings">
-  <button>Application Settings</button>
-</a>
-<a href="/pharmacy/technicalhelp">
-  <button>Get Technical help</button>
-</a>
-<a href="/logout">
-  <button>Logout</button>
-</a>
-<h1>Pharmacy Details</h1>
-<br><br>
-<h2>Pharmacy name: </h2>
-<h4 th:text="${pharmacy.pharmacyName}"></h4>
-<br>
-<h2>Owner name: </h2>
-<h4 th:text="${pharmacy.ownerName}"></h4>
-<br>
-<h2>Contact number: </h2>
-<h4 th:text="${pharmacy.contactNo}"></h4>
-<br>
-<h2>Registration Id: </h2>
-<h4 th:text="${pharmacy.registrationId}"></h4>
-<br>
-</body>
+<img
+        src="/images/dashboard/PharmacyBG1.png"
+        class="background"
+        alt="Body Background Image"
+/>
+
+<div class="navBarContainer">
+
+  <!-- setting the clicable dropdown -->
+  <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">
+      <!-- <button onclick="myFunction()" id="userIcon"> -->
+      <!-- <img src="../images/profilePic.svg" id="userIcon" /> -->
+      <img src="/images/dashboard/profilePic.svg" class="dropbtn" />
+    </button>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="/pharmacy/viewpharmacy">My Profile</a>
+      <a href="/logout">Logout</a>
+      <!-- <a href="">Contact</a> -->
+    </div>
+  </div>
+
+  <script>
+    /* When the user clicks on the button,
+  toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+      if (!event.target.matches(".dropbtn")) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains("show")) {
+            openDropdown.classList.remove("show");
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- testing for notification -->
+  <!-- testing for notification -->
+  <div class="dropdownNotify">
+    <button onclick="myFunctionNotify()" class="dropbtnNotify">
+      <!-- <button onclick="myFunction()" id="userIcon"> -->
+      <!-- <img src="../images/profilePic.svg" id="userIcon" /> -->
+      <img
+              src="/images/dashboard/notificationIcon.svg"
+              class="dropbtnNotify"
+      />
+    </button>
+    <div id="myDropdownNotify" class="dropdownNotify-content">
+      <a href="">Message received from Customer 01.</a>
+      <a href="">Customer 03 placed an order</a>
+      <a href="">Admin : New features added. Click here to check.</a>
+    </div>
+  </div>
+
+  <!-- end -->
+  <script>
+    /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+    function myFunctionNotify() {
+      document.getElementById("myDropdownNotify").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+      if (!event.target.matches(".dropbtnNotify")) {
+        var dropdowns = document.getElementsByClassName(
+                "dropdownNotify-content"
+        );
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains("show")) {
+            openDropdown.classList.remove("show");
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- <img src="../images/profilePic.svg" id="userIcon" />
+
+  <img src="../images/notificationIcon.svg" id="notification" /> -->
+
+  <div class="notification"></div>
+</div>
+
+<div class="dashDiscription">
+  <h2>Pharmacy Details</h2>
+</div>
+
+<!--
+<div class="dashBoardDescriptionParagraph">
+  A quick data overview of the inventory and Customers
+</div> -->
+<div class="sideBarContainer">
+  <img src="/images/dashboard/pharmacyLogo.svg" class="logoIcon" />
+
+  <div class="sideBarContainer">
+    <img src="/images/dashboard/pharmacyLogo.svg" class="logoIcon" />
+
+    <div class="sideBarButtonContainer">
+      <a href="/pharmacy/dashboard">
+        <button
+                onclick="document.location='pharmacydashboard.html'"
+                class="dashboardButton"
+        >
+          <div id="dashboardLine">Dashboard</div>
+          <img
+                  src="/images/dashboard/newDashboardIcon.svg"
+                  id="dashboardButtonIcon"
+          />
+        </button>
+      </a>
+
+      <a href="/pharmacy/viewinventory">
+        <button class="iventoryButton">
+          <div id="iventoryLine">Inventory</div>
+          <img
+                  src="/images/dashboard/iventoryButton.svg"
+                  id="iventoryButtonIcon"
+          />
+        </button>
+      </a>
+      <a href="/pharmacy/viewprescriptions">
+        <button
+                onclick="document.location='pharmacyviewprescriptions.html'"
+                class="prescriptionsButton"
+        >
+          <div id="prescriptionLine">Prescriptions</div>
+          <img
+                  src="/images/dashboard/prescriptionButtonIcon.svg"
+                  id="prescriptionButtonIcon"
+          />
+        </button>
+      </a>
+      <a href="/pharmacy/vieworders">
+        <button class="customerChatButton">
+          <img src="/images/dashboard/cart.svg" id="chatButtonIcon" />
+          <div id="chatLine">Orders</div>
+        </button>
+      </a>
+
+      <a href="/pharmacy/viewpharmacy">
+        <button class="profileButton">
+          <img src="/images/dashboard/profile.png" id="profileButtonIcon" />
+          <div id="profileLine">Profile</div>
+        </button>
+      </a>
+
+      <a href="/pharmacy/settings">
+        <button class="applicationSettingsButton">
+          <div id="applicationSettingsLine">Settings</div>
+
+          <img
+                  src="/images/dashboard/ApplicationSettingsICon.svg"
+                  id="ApplicationSettingsICon"
+          />
+        </button>
+      </a>
+      <a href="/pharmacy/technicalhelp">
+        <button class="getTechnicalHelpButton">
+          <div id="getTechnicalHelpLine">Get Technical Help</div>
+          <img src="/images/dashboard/gethelpIcon.svg" id="gethelpICon" />
+        </button>
+      </a>
+
+      <a href="/logout">
+        <button class="logOutButton">
+          <div id="logOutLine">Log Out</div>
+          <img src="/images/profile/logout.png" id="logOutIcon" />
+        </button>
+      </a>
+
+    </div>
+  </div>
+  <div class="profileCardContainer" id="card1">
+    <img src="/images/profile/pharmacyname.png" class="cartIcon" />
+    <div class="heading3">
+      <h3>Pharmacy Name</h3>
+    </div>
+
+    <div class="heading5">
+      <h5 th:text="${pharmacy.pharmacyName}"></h5>
+    </div>
+
+  </div>
+
+  <div class="profileCardContainer" id="card2">
+    <img src="/images/profile/Owner.png" class="medicineIcon" />
+    <div class="heading3">
+      <h3>Owner Name</h3>
+    </div>
+
+    <div class="heading5">
+      <h5 th:text="${pharmacy.ownerName}"></h5>
+    </div>
+
+  </div>
+
+  <div class="profileCardContainer" id="card3">
+    <img src="/images/profile/phone.png" class="customerIcon" />
+    <div class="heading3">
+      <h3>Contact Number</h3>
+    </div>
+
+    <div class="heading5">
+      <h5 th:text="${pharmacy.contactNo}"></h5>
+    </div>
+
+  </div>
+
+  <div class="profileCardContainer" id="card4">
+    <img src="/images/profile/register.png" class="customerIcon" />
+    <div class="heading3">
+      <h3>Registration Id</h3>
+    </div>
+
+    <div class="heading5">
+      <h5 th:text="${pharmacy.registrationId}"></h5>
+    </div>
+
+  </div>
+
+
+
+
+
+  <!--<div class="statusCardContainer" id="statusCard3">-->
+  <!--  <div class="statusCardHeader">Customer</div>-->
+  <!--  <hr />-->
+  <!--  &lt;!&ndash; <div class="statusCardLeftSideUp">Count</div> &ndash;&gt;-->
+  <!--  <div class="statusCardLeftSideDown">Total no of Customers</div>-->
+  <!--  &lt;!&ndash; <div class="statusCardRightSideUp">Count</div> &ndash;&gt;-->
+  <!--  <div id="cardCountRightSideDown">Count</div>-->
+  <!--</div>-->
+  <footer>
+    <div class="footerTextContainer">
+      <div class="footerUp" id="footerUp">Powered by</div>
+      <div class="footerDown">
+        <b>Noobz69</b>
+      </div>
+    </div>
+  </footer>
+
+</div>
+ </body>
 </html>
